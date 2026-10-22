@@ -1,0 +1,212 @@
+.cd-page .ip-workspace {
+  width: 100%;
+  max-width: 1120px;
+  margin-inline: auto;
+}
+
+.cd-page .ip-workspace > .cd-canonical-state {
+  margin-bottom: 14px;
+}
+
+.cd-page .ip-pattern-layout {
+  display: grid;
+  gap: clamp(14px, 2vw, 22px);
+  min-width: 0;
+}
+
+.cd-page .ip-pattern-layout > * {
+  min-width: 0;
+}
+
+.cd-page .ip-workspace--collection .ip-pattern-layout {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.cd-page .ip-workspace--collection .ip-pattern-layout > .cd-metrics {
+  position: relative;
+  padding-bottom: 4px;
+}
+
+.cd-page .ip-workspace--collection .ip-pattern-layout > .cd-surface {
+  border-top-color: color-mix(in srgb, var(--s3-primary) 30%, var(--s3-border));
+}
+
+.cd-page .ip-workspace--history .ip-pattern-layout {
+  max-width: 920px;
+  margin-inline: auto;
+}
+
+.cd-page .ip-workspace--history .cd-records {
+  gap: 8px;
+}
+
+.cd-page .ip-workspace--history .cd-records > article {
+  border-left: 2px solid color-mix(in srgb, var(--s3-primary) 30%, var(--s3-border));
+}
+
+.cd-page .ip-workspace--detail .ip-pattern-layout > .cd-surface,
+.cd-page .ip-workspace--prize .ip-pattern-layout > .cd-surface,
+.cd-page .ip-workspace--learning .ip-pattern-layout > .cd-surface {
+  display: grid;
+  grid-template-columns: minmax(240px, .72fr) minmax(0, 1.55fr);
+  align-items: start;
+  gap: clamp(16px, 2.4vw, 30px);
+}
+
+.cd-page .ip-workspace--detail .ip-pattern-layout > .cd-surface > header,
+.cd-page .ip-workspace--prize .ip-pattern-layout > .cd-surface > header,
+.cd-page .ip-workspace--learning .ip-pattern-layout > .cd-surface > header {
+  grid-column: 1;
+  grid-row: 1 / span 8;
+  position: sticky;
+  top: 92px;
+  align-content: start;
+}
+
+.cd-page .ip-workspace--detail .ip-pattern-layout > .cd-surface > :not(header),
+.cd-page .ip-workspace--prize .ip-pattern-layout > .cd-surface > :not(header),
+.cd-page .ip-workspace--learning .ip-pattern-layout > .cd-surface > :not(header) {
+  grid-column: 2;
+}
+
+.cd-page .ip-workspace--detail .ip-pattern-layout > .cd-surface {
+  border-color: color-mix(in srgb, var(--s3-primary) 34%, var(--s3-border));
+}
+
+.cd-page .ip-workspace--status-access .ip-pattern-layout > .cd-surface {
+  border-radius: var(--s3-radius-xl);
+}
+
+.cd-page .ip-workspace--status-access .ip-pattern-layout > .cd-surface > header {
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--s3-border);
+}
+
+.cd-page .ip-workspace--status-access .ip-pattern-layout > .cd-metrics {
+  border-block: 1px solid color-mix(in srgb, var(--s3-primary) 24%, var(--s3-border));
+  padding-block: 12px;
+}
+
+.cd-page .ip-workspace--prize .ip-pattern-layout > .cd-surface {
+  border-color: color-mix(in srgb, var(--s3-primary) 46%, var(--s3-border));
+  background: linear-gradient(145deg, color-mix(in srgb, var(--s3-primary) 8%, var(--s3-surface-raised)), var(--s3-surface-raised) 48%);
+}
+
+.cd-page .ip-workspace--action {
+  max-width: 860px;
+}
+
+.cd-page .ip-workspace--action .ip-pattern-layout > .cd-surface {
+  border-left: 3px solid var(--s3-primary);
+}
+
+.cd-page .ip-workspace--action .cd-action-workspace {
+  max-width: 680px;
+  margin-inline: auto;
+}
+
+.cd-page .ip-workspace--action .cd-form {
+  gap: 14px;
+}
+
+.cd-page .ip-workspace--settings-form {
+  max-width: 920px;
+}
+
+.cd-page .ip-workspace--settings-form .ip-pattern-layout > .cd-surface {
+  display: grid;
+  grid-template-columns: minmax(220px, .62fr) minmax(0, 1.38fr);
+  align-items: start;
+  gap: clamp(16px, 2.4vw, 28px);
+  border-style: dashed;
+}
+
+.cd-page .ip-workspace--settings-form .ip-pattern-layout > .cd-surface > header {
+  grid-column: 1;
+  grid-row: 1 / span 8;
+}
+
+.cd-page .ip-workspace--settings-form .ip-pattern-layout > .cd-surface > :not(header) {
+  grid-column: 2;
+}
+
+.cd-page .ip-workspace--chat-community .ip-pattern-layout {
+  min-height: min(580px, 68dvh);
+}
+
+.cd-page .ip-workspace--chat-community .ip-pattern-layout > .cd-surface {
+  display: grid;
+  grid-template-rows: auto minmax(260px, 1fr) auto auto;
+  height: 100%;
+  border-radius: var(--s3-radius-xl) var(--s3-radius-2xl) var(--s3-radius-2xl) var(--s3-radius-xl);
+}
+
+.cd-page .ip-workspace--chat-community .cd-chat {
+  align-content: end;
+}
+
+.cd-page .ip-workspace--chat-community .cd-chat-composer {
+  position: sticky;
+  bottom: 76px;
+  z-index: 2;
+  padding-top: 10px;
+  background: linear-gradient(180deg, transparent, var(--s3-surface-raised) 20%);
+}
+
+.cd-page .ip-workspace--learning .ip-pattern-layout > .cd-surface {
+  background: linear-gradient(180deg, color-mix(in srgb, var(--s3-primary) 6%, var(--s3-surface-raised)), var(--s3-surface-raised) 44%);
+}
+
+.cd-page .ip-workspace--learning .ip-pattern-layout > .cd-metrics {
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}
+
+@media (max-width: 767px) {
+  .cd-page .ip-pattern-layout {
+    gap: 12px;
+  }
+
+  .cd-page .ip-workspace--detail .ip-pattern-layout > .cd-surface,
+  .cd-page .ip-workspace--prize .ip-pattern-layout > .cd-surface,
+  .cd-page .ip-workspace--learning .ip-pattern-layout > .cd-surface,
+  .cd-page .ip-workspace--settings-form .ip-pattern-layout > .cd-surface {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 14px;
+  }
+
+  .cd-page .ip-workspace--detail .ip-pattern-layout > .cd-surface > header,
+  .cd-page .ip-workspace--prize .ip-pattern-layout > .cd-surface > header,
+  .cd-page .ip-workspace--learning .ip-pattern-layout > .cd-surface > header,
+  .cd-page .ip-workspace--settings-form .ip-pattern-layout > .cd-surface > header,
+  .cd-page .ip-workspace--detail .ip-pattern-layout > .cd-surface > :not(header),
+  .cd-page .ip-workspace--prize .ip-pattern-layout > .cd-surface > :not(header),
+  .cd-page .ip-workspace--learning .ip-pattern-layout > .cd-surface > :not(header),
+  .cd-page .ip-workspace--settings-form .ip-pattern-layout > .cd-surface > :not(header) {
+    grid-column: 1;
+    grid-row: auto;
+    position: static;
+  }
+
+  .cd-page .ip-workspace--action .cd-action-workspace {
+    max-width: none;
+  }
+
+  .cd-page .ip-workspace--chat-community .ip-pattern-layout {
+    min-height: 0;
+  }
+
+  .cd-page .ip-workspace--chat-community .cd-chat-composer {
+    bottom: 68px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cd-page .ip-workspace,
+  .cd-page .ip-workspace * {
+    scroll-behavior: auto;
+    transition-duration: .01ms;
+    animation-duration: .01ms;
+    animation-iteration-count: 1;
+  }
+}

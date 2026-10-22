@@ -1,0 +1,10 @@
+:where(.surface,.surface-subtle,.surface-elevated,.data-surface,.action-surface,.safety-surface,.cut-surface) {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-card);
+  background: var(--surface);
+  color: var(--text);
+  box-shadow: var(--shadow-card);
+}
+.surface-subtle, .data-surface { background: var(--surface-raised); box-shadow: none; }
+.surface-elevated { background: var(--surface); border-color: var(--border-strong); box-shadow: var(--shadow-raised); }
+.safety-surface { background: color-mix(in srgb, var(--warning) 7%, var(--surface)); border-color: color-mix(in srgb, var(--warning) 32%, var(--border)); }

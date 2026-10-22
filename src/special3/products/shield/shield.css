@@ -1,0 +1,882 @@
+.s3-shield-page {
+  --shield-accent: #8f79ff;
+  display: grid;
+  max-inline-size: 1240px;
+  margin: auto;
+  gap: var(--s3-space-3);
+}
+.s3-shield-page .s3-page-hero {
+  margin-block-end: 0;
+}
+.s3-shield-page .s3-page-hero__visual {
+  color: var(--shield-accent) !important;
+  background: color-mix(
+    in srgb,
+    var(--shield-accent) 14%,
+    transparent
+  ) !important;
+}
+.s3-shield-page button:focus-visible {
+  outline: 2px solid var(--s3-primary);
+  outline-offset: 2px;
+}
+.s3-shield-metrics {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--s3-space-2);
+}
+.s3-shield-menu,
+.s3-product__tabs,
+.s3-product__actions,
+.s3-shield-choice-row {
+  display: flex;
+  min-width: 44px;
+  max-width: 100%;
+  align-items: center;
+  gap: 4px;
+  overflow-x: auto;
+  scroll-padding-inline: 4px;
+  scroll-snap-type: x proximity;
+  overscroll-behavior-inline: contain;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+.s3-shield-menu {
+  padding: 3px;
+  border-radius: var(--s3-radius-card);
+}
+.s3-shield-menu::-webkit-scrollbar,
+.s3-product__tabs::-webkit-scrollbar,
+.s3-product__actions::-webkit-scrollbar,
+.s3-shield-choice-row::-webkit-scrollbar {
+  display: none;
+}
+.s3-shield-menu button,
+.s3-product__tabs button,
+.s3-shield-choice-row button {
+  position: relative;
+  isolation: isolate;
+  flex: 0 0 max-content;
+  width: auto;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0 12px;
+  overflow: visible;
+  border: 0;
+  background: transparent;
+  color: var(--s3-text-secondary);
+  font: inherit;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1;
+  text-overflow: clip;
+  white-space: nowrap;
+  scroll-snap-align: center;
+  touch-action: manipulation;
+  cursor: pointer;
+}
+.s3-shield-menu button:before,
+.s3-product__tabs button:before,
+.s3-shield-choice-row button:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 6px 0;
+  border: 1px solid var(--s3-border);
+  border-radius: var(--s3-radius-control);
+  background: var(--s3-surface);
+}
+.s3-shield-menu button[aria-current="page"],
+.s3-product__tabs button[aria-current="page"],
+.s3-shield-choice-row button[aria-pressed="true"] {
+  color: #fff;
+}
+.s3-shield-menu button[aria-current="page"]:before,
+.s3-product__tabs button[aria-current="page"]:before,
+.s3-shield-choice-row button[aria-pressed="true"]:before {
+  border-color: transparent;
+  background: var(--s3-primary);
+}
+.s3-shield-market,
+.s3-shield-form {
+  display: grid;
+  gap: var(--s3-space-4);
+  padding: var(--s3-space-4);
+  border-radius: var(--s3-radius-card);
+}
+.s3-shield-market > header,
+.s3-shield-form > header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--s3-space-3);
+  padding-block-end: var(--s3-space-3);
+  border-block-end: 1px solid var(--s3-border);
+}
+.s3-shield-market > header > span,
+.s3-shield-form > header > span {
+  display: grid;
+  min-width: 0;
+  gap: 2px;
+}
+.s3-shield-market > header small,
+.s3-shield-form > header small {
+  color: var(--s3-primary);
+  font-size: 9px;
+  font-weight: 800;
+}
+.s3-shield-heatmap {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 6px;
+}
+.s3-shield-heatmap article {
+  display: grid;
+  min-width: 0;
+  gap: 8px;
+  padding: 10px;
+  border: 1px solid var(--s3-border);
+  border-radius: var(--s3-radius-nested);
+  background: color-mix(in srgb, var(--shield-state) 7%, var(--s3-surface));
+}
+.s3-shield-heatmap__swatch {
+  height: 8px;
+  border-radius: 999px;
+  background: var(--shield-state);
+}
+.s3-shield-heatmap article > strong {
+  font-size: 11px;
+}
+.s3-shield-heatmap dl {
+  display: grid;
+  margin: 0;
+  gap: 5px;
+}
+.s3-shield-heatmap dl > div {
+  display: grid;
+  gap: 1px;
+}
+.s3-shield-heatmap dt {
+  color: var(--s3-text-muted);
+  font-size: 8px;
+}
+.s3-shield-heatmap dd {
+  margin: 0;
+  font-size: 11px;
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+}
+.s3-shield-primary {
+  width: 100%;
+  justify-content: center;
+  border-color: transparent !important;
+  background: linear-gradient(115deg, var(--s3-primary), #b24cff) !important;
+  color: #fff !important;
+  box-shadow: var(--s3-shadow-2);
+}
+.s3-shield-support {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--s3-space-3);
+}
+.s3-shield-review-row,
+.s3-product__inline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s3-space-3);
+}
+.s3-shield-review-row > div {
+  display: grid;
+}
+.s3-product__metrics {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--s3-space-2);
+}
+.s3-product__metric,
+.s3-product__panel,
+.s3-product__item {
+  padding: var(--s3-space-3);
+  border: 1px solid var(--s3-border);
+  border-radius: var(--s3-radius-card);
+  background: var(--s3-surface);
+}
+.s3-product__metric strong {
+  display: block;
+  margin-top: 4px;
+  font-size: var(--s3-type-h4);
+  font-variant-numeric: tabular-nums;
+}
+.s3-product__muted {
+  color: var(--s3-text-muted);
+  font-size: var(--s3-type-caption);
+}
+.s3-product__eyebrow {
+  color: var(--s3-primary);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.s3-product__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--s3-space-3);
+}
+.s3-product__form,
+.s3-product__item {
+  display: grid;
+  gap: var(--s3-space-3);
+}
+.s3-product__form label {
+  display: grid;
+  gap: 6px;
+  font-size: var(--s3-type-label);
+  font-weight: 700;
+}
+.s3-product__form input,
+.s3-product__form select {
+  width: 100%;
+  min-height: 44px;
+}
+.s3-product__actions {
+  padding: 2px;
+}
+.s3-product__actions > * {
+  flex: 0 0 max-content;
+  white-space: nowrap;
+}
+.s3-product__progress {
+  height: 6px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: var(--s3-surface-raised);
+}
+.s3-product__progress > span {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--s3-primary), #b24cff);
+}
+@media (max-width: 767px) {
+  .s3-shield-page {
+    gap: var(--s3-space-2);
+  }
+  .s3-shield-metrics {
+    gap: 4px;
+  }
+  .s3-shield-market,
+  .s3-shield-form {
+    padding: var(--s3-space-3);
+  }
+  .s3-shield-market > header,
+  .s3-shield-form > header {
+    display: grid;
+  }
+  .s3-shield-heatmap {
+    gap: 3px;
+  }
+  .s3-shield-heatmap article {
+    padding: 7px 5px;
+  }
+  .s3-shield-heatmap article > strong {
+    font-size: 9px;
+  }
+  .s3-shield-heatmap dd {
+    font-size: 9px;
+  }
+  .s3-shield-support {
+    grid-template-columns: 1fr;
+  }
+  .s3-product__metrics {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .s3-product__grid {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 479px) {
+  .s3-shield-page .s3-page-hero {
+    padding: var(--s3-space-3) !important;
+  }
+  .s3-shield-heatmap dt {
+    font-size: 7px;
+  }
+  .s3-shield-heatmap article > strong {
+    font-size: 8px;
+  }
+  .s3-shield-heatmap dd {
+    font-size: 8px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .s3-shield-page * {
+    scroll-behavior: auto !important;
+    transition: none !important;
+    animation: none !important;
+  }
+}
+.s3-shield-choice {
+  display: grid;
+  gap: 6px;
+}
+.s3-shield-lifecycle {
+  display: flex;
+  gap: 6px;
+  overflow-x: auto;
+  padding-block: 4px;
+  scrollbar-width: none;
+}
+.s3-shield-lifecycle span {
+  flex: 0 0 auto;
+  padding: 9px 12px;
+  border: 1px solid var(--s3-border);
+  border-radius: 999px;
+  color: var(--s3-text-muted);
+  font-size: 10px;
+  font-weight: 800;
+}
+.s3-shield-lifecycle span.is-active {
+  border-color: var(--s3-primary);
+  background: color-mix(in srgb, var(--s3-primary) 13%, var(--s3-surface));
+  color: var(--s3-text);
+}
+.s3-shield-snapshot > header,
+.s3-shield-section-head,
+.s3-shield-quote > header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+.s3-shield-statline {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 6px;
+  margin-block: 12px;
+}
+.s3-shield-statline span,
+.s3-shield-quote-grid span,
+.s3-shield-fees span {
+  display: grid;
+  gap: 3px;
+  padding: 10px;
+  border: 1px solid var(--s3-border);
+  border-radius: var(--s3-radius-nested);
+  background: var(--s3-surface-raised);
+}
+.s3-shield-statline small,
+.s3-shield-quote-grid small,
+.s3-shield-fees small {
+  color: var(--s3-text-muted);
+  font-size: 9px;
+}
+.s3-shield-statline strong,
+.s3-shield-quote-grid strong,
+.s3-shield-fees strong {
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+}
+.s3-shield-segments {
+  display: flex;
+  height: 12px;
+  overflow: hidden;
+  border-radius: 999px;
+}
+.s3-shield-segments i {
+  min-width: 2px;
+}
+.s3-shield-quote {
+  display: grid;
+  gap: 10px;
+  padding: 14px;
+  border: 1px solid var(--s3-border);
+  border-radius: var(--s3-radius-card);
+  background: color-mix(in srgb, var(--s3-primary) 5%, var(--s3-surface));
+}
+.s3-shield-quote header button {
+  min-height: 40px;
+  padding-inline: 12px;
+  border: 1px solid var(--s3-border);
+  border-radius: var(--s3-radius-control);
+  background: var(--s3-surface);
+  color: var(--s3-text);
+  font-weight: 800;
+}
+.s3-shield-quote-grid,
+.s3-shield-fees {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 6px;
+}
+.s3-shield-fees p {
+  grid-column: 1/-1;
+  margin: 2px;
+  color: var(--s3-text-muted);
+  font-size: 10px;
+}
+.s3-shield-detail-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.s3-shield-nft-art {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 12px 22px color-mix(in srgb, #000 34%, transparent));
+}
+.s3-shield-nft-artwork {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+}
+.s3-shield-nft-band {
+  position: absolute;
+  z-index: 1;
+  top: 42%;
+  left: 50%;
+  display: grid;
+  width: 54%;
+  max-width: 116px;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  line-height: 1;
+  text-align: center;
+  text-shadow: 0 1px 4px #000;
+  pointer-events: none;
+}
+.s3-shield-nft-band strong {
+  font-family: var(--s3-font-mono);
+  font-size: clamp(10px, 1.25vw, 15px);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.02em;
+}
+.s3-shield-nft-band small {
+  overflow: hidden;
+  margin-top: 3px;
+  font-family: var(--s3-font-mono);
+  font-size: clamp(5px, 0.62vw, 8px);
+  letter-spacing: -0.02em;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.s3-shield-asset-preview {
+  display: grid;
+  grid-template-columns: minmax(148px, 45%) minmax(0, 1fr);
+  align-items: center;
+  gap: var(--s3-space-3);
+  margin: 0;
+  min-height: 176px;
+}
+.s3-shield-asset-preview > .s3-shield-nft-artwork {
+  width: 100%;
+  height: 176px;
+}
+.s3-shield-asset-preview figcaption {
+  display: grid;
+  min-width: 0;
+  gap: 4px;
+}
+.s3-shield-asset-preview figcaption small,
+.s3-shield-mint-preview small {
+  color: var(--s3-text-muted);
+  font-size: 10px;
+}
+.s3-shield-asset-preview figcaption strong {
+  font-size: var(--s3-type-h3);
+  font-variant-numeric: tabular-nums;
+}
+.s3-shield-asset-preview figcaption span {
+  color: var(--s3-text-secondary);
+  font-family: var(--s3-font-mono);
+  font-size: 10px;
+  overflow-wrap: anywhere;
+}
+.s3-shield-asset-preview.is-compact {
+  grid-template-columns: 56px minmax(0, 1fr);
+  min-height: 64px;
+  padding: 6px 10px;
+  border: 1px solid var(--s3-border);
+  border-radius: var(--s3-radius-control);
+  background: var(--s3-surface-raised);
+}
+.s3-shield-asset-preview.is-compact > .s3-shield-nft-artwork {
+  width: 56px;
+  height: 56px;
+}
+.s3-shield-nft-facts {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 6px;
+}
+.s3-shield-nft-facts span {
+  display: grid;
+  gap: 3px;
+  padding: 8px;
+  border-radius: var(--s3-radius-control);
+  background: var(--s3-surface-raised);
+}
+.s3-shield-nft-facts small {
+  color: var(--s3-text-muted);
+  font-size: 9px;
+}
+.s3-shield-nft-facts strong {
+  font-size: 11px;
+  overflow-wrap: anywhere;
+}
+.s3-shield-mint-preview {
+  display: grid;
+  grid-template-columns: 184px minmax(0, 1fr);
+  align-items: center;
+  gap: var(--s3-space-3);
+  padding: var(--s3-space-3);
+  border: 1px solid var(--s3-border);
+  border-radius: var(--s3-radius-card);
+  background: var(--s3-surface-raised);
+}
+.s3-shield-mint-family {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  align-items: center;
+  gap: 2px;
+  min-width: 0;
+}
+.s3-shield-mint-family .s3-shield-nft-artwork {
+  height: 76px;
+}
+.s3-shield-mint-preview > div {
+  display: grid;
+  gap: 4px;
+}
+.s3-shield-mint-preview h3,
+.s3-shield-mint-preview p,
+.s3-shield-detail-head h2,
+.s3-shield-detail-head p {
+  margin: 0;
+}
+.s3-shield-emblem {
+  width: 220px;
+  height: 220px;
+  flex: 0 0 220px;
+}
+.s3-shield-detail-batch {
+  color: var(--s3-text-secondary);
+  font-family: var(--s3-font-mono);
+  font-size: 11px;
+  overflow-wrap: anywhere;
+}
+.s3-shield-unassigned {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 6px;
+  margin: 6px 0 0;
+}
+.s3-shield-unassigned div {
+  display: grid;
+  gap: 2px;
+  padding: 7px;
+  border-radius: var(--s3-radius-control);
+  background: var(--s3-surface);
+}
+.s3-shield-unassigned dt {
+  color: var(--s3-text-muted);
+  font-size: 8px;
+}
+.s3-shield-unassigned dd {
+  margin: 0;
+  font-size: 9px;
+  font-weight: 800;
+}
+.s3-shield-mint-result {
+  display: grid;
+  grid-template-columns: 112px minmax(0, 1fr);
+  align-items: center;
+  gap: var(--s3-space-3);
+  padding: var(--s3-space-3);
+  border: 1px solid var(--s3-primary);
+  border-radius: var(--s3-radius-card);
+  background: color-mix(in srgb, var(--s3-primary) 8%, var(--s3-surface));
+}
+.s3-shield-mint-result > .s3-shield-nft-artwork {
+  height: 112px;
+}
+.s3-shield-mint-result.is-unassigned {
+  grid-template-columns: 1fr;
+}
+.s3-shield-mint-result-copy {
+  display: grid;
+  gap: 6px;
+}
+.s3-shield-mint-result h3,
+.s3-shield-mint-result p,
+.s3-shield-identity-state h2,
+.s3-shield-identity-state p {
+  margin: 0;
+}
+.s3-shield-identity-state {
+  display: grid;
+  gap: var(--s3-space-3);
+}
+.s3-shield-identity-options {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+}
+.s3-shield-identity-options > button {
+  display: grid;
+  min-width: 0;
+  min-height: 44px;
+  gap: 6px;
+  padding: 8px;
+  border: 1px solid var(--s3-border);
+  border-radius: var(--s3-radius-control);
+  background: var(--s3-surface-raised);
+  color: var(--s3-text);
+  cursor: pointer;
+}
+.s3-shield-identity-options > button > strong {
+  font-family: var(--s3-font-mono);
+  font-size: 10px;
+  overflow-wrap: anywhere;
+}
+.s3-shield-ledger {
+  display: grid;
+  gap: 6px;
+}
+.s3-shield-ledger article {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: 10px;
+  padding: 11px;
+  border-bottom: 1px solid var(--s3-border);
+}
+.s3-shield-ledger article span,
+.s3-shield-ledger article small {
+  color: var(--s3-text-muted);
+}
+.s3-shield-callout {
+  display: grid;
+  gap: 4px;
+  padding: 14px;
+  border-inline-start: 3px solid var(--s3-primary);
+  background: color-mix(in srgb, var(--s3-primary) 8%, var(--s3-surface));
+}
+.s3-shield-callout strong {
+  font-size: 22px;
+}
+.s3-shield-callout p {
+  margin: 0;
+  color: var(--s3-text-muted);
+  font-size: 11px;
+}
+.s3-shield-traits {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+.s3-shield-traits strong {
+  width: 100%;
+}
+.s3-shield-traits span {
+  padding: 7px 10px;
+  border: 1px solid var(--s3-border);
+  border-radius: 999px;
+  font-size: 10px;
+}
+.s3-shield-distribution-list {
+  display: grid;
+  gap: 6px;
+}
+.s3-shield-distribution-list article {
+  display: grid;
+  grid-template-columns: 14px minmax(90px, 1fr) auto 50px;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  border: 1px solid var(--s3-border);
+  border-radius: var(--s3-radius-nested);
+}
+.s3-shield-distribution-list i {
+  width: 12px;
+  height: 32px;
+  border-radius: 999px;
+}
+.s3-shield-distribution-list span {
+  display: grid;
+}
+.s3-shield-distribution-list small,
+.s3-shield-distribution-list em {
+  color: var(--s3-text-muted);
+  font-size: 10px;
+  font-style: normal;
+}
+.s3-shield-rarity {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 6px;
+  margin-block: 12px;
+}
+.s3-shield-rarity > span {
+  display: grid;
+  gap: 4px;
+  padding: 9px;
+  border: 1px solid var(--s3-border);
+  border-radius: var(--s3-radius-nested);
+}
+.s3-shield-rarity i {
+  height: 7px;
+  border-radius: 999px;
+}
+.s3-shield-rarity strong {
+  font-size: 13px;
+}
+.s3-shield-rarity small {
+  color: var(--s3-text-muted);
+  font-size: 8px;
+}
+.s3-shield-rarity .is-missing {
+  opacity: 0.47;
+  filter: saturate(0.25);
+}
+.s3-shield-rarity .is-owned {
+  outline: 1px solid var(--s3-primary);
+}
+.s3-shield-gates {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-block: 12px;
+}
+.s3-shield-gates article {
+  display: grid;
+  gap: 4px;
+  padding: 13px;
+  border: 1px solid var(--s3-border);
+  border-radius: var(--s3-radius-nested);
+}
+.s3-shield-gates span {
+  color: var(--s3-text-muted);
+  font-size: 10px;
+}
+.s3-shield-heirs {
+  display: grid;
+  gap: 8px;
+}
+.s3-shield-heirs article {
+  display: grid;
+  grid-template-columns: 24px minmax(0, 1fr) 80px 18px auto;
+  align-items: center;
+  gap: 7px;
+}
+.s3-shield-heirs article > span {
+  display: grid;
+  width: 24px;
+  height: 24px;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--s3-primary);
+  color: #fff;
+  font-size: 10px;
+  font-weight: 800;
+}
+.s3-shield-heirs button {
+  min-height: 44px;
+  padding-inline: 9px;
+  border: 1px solid var(--s3-border);
+  border-radius: var(--s3-radius-control);
+  background: transparent;
+  color: var(--s3-text);
+  font-size: 10px;
+}
+.s3-shield-allocation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px;
+  border: 1px solid;
+  border-radius: var(--s3-radius-nested);
+}
+.s3-shield-allocation.is-valid {
+  border-color: #1eaa72;
+}
+.s3-shield-allocation.is-invalid {
+  border-color: #d8a533;
+}
+@media (max-width: 767px) {
+  .s3-shield-statline {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .s3-shield-quote-grid,
+  .s3-shield-fees {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .s3-shield-rarity {
+    grid-template-columns: repeat(5, minmax(64px, 1fr));
+    overflow-x: auto;
+  }
+  .s3-shield-gates {
+    grid-template-columns: 1fr;
+  }
+  .s3-shield-heirs article {
+    grid-template-columns: 24px minmax(0, 1fr) 64px 14px;
+  }
+  .s3-shield-heirs article button {
+    grid-column: 2/-1;
+  }
+  .s3-shield-ledger article {
+    grid-template-columns: 1fr auto;
+  }
+  .s3-shield-ledger article small {
+    grid-column: 1/-1;
+  }
+  .s3-shield-emblem {
+    width: 168px;
+    height: 168px;
+    flex-basis: 168px;
+  }
+  .s3-shield-asset-preview {
+    grid-template-columns: 136px minmax(0, 1fr);
+  }
+  .s3-shield-asset-preview > .s3-shield-nft-artwork {
+    height: 152px;
+  }
+  .s3-shield-mint-preview {
+    grid-template-columns: 1fr;
+  }
+  .s3-shield-mint-family .s3-shield-nft-artwork {
+    height: 92px;
+  }
+  .s3-shield-identity-options {
+    grid-template-columns: 1fr;
+  }
+  .s3-shield-detail-head {
+    align-items: flex-start;
+  }
+}
+@media (max-width: 479px) {
+  .s3-shield-detail-head {
+    display: grid;
+    grid-template-columns: 136px minmax(0, 1fr);
+  }
+  .s3-shield-emblem {
+    width: 136px;
+    height: 148px;
+    flex-basis: auto;
+  }
+  .s3-shield-nft-band strong {
+    font-size: 10px;
+  }
+  .s3-shield-nft-band small {
+    font-size: 5px;
+  }
+}
+.s3-shield-page i.is-black {
+  outline: 1px solid color-mix(in srgb, var(--s3-text) 38%, transparent);
+  outline-offset: -1px;
+}

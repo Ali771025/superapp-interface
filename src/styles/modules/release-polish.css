@@ -1,0 +1,153 @@
+/* v2.10.18 visual completion: shared hierarchy, interaction and responsive guardrails. */
+:root {
+  --surface-soft: color-mix(in srgb, var(--surface) 88%, var(--brand) 12%);
+  --focus-ring: 0 0 0 3px color-mix(in srgb, var(--brand) 34%, transparent);
+}
+
+:where(button, a, input, select, textarea) { touch-action:manipulation; }
+:where(button, a, input, select, textarea):focus-visible {
+  outline:2px solid var(--brand);
+  outline-offset:3px;
+  box-shadow:var(--focus-ring);
+}
+:where(button, [role="button"], [role="link"]):not(:disabled) { cursor:pointer; }
+:where(button, [role="button"], [role="link"]):active:not(:disabled) { transform:scale(.985); }
+:where(button, [role="button"], [role="link"]) { transition:transform var(--motion-fast) var(--ease-standard), border-color var(--motion-fast) ease, background-color var(--motion-fast) ease, box-shadow var(--motion-fast) ease; }
+
+.surface,
+.brand-surface,
+.action-surface,
+.surface-elevated,
+.data-surface {
+  border-color:color-mix(in srgb,var(--border) 88%,var(--brand) 12%);
+}
+.surface,
+.brand-surface,
+.action-surface { box-shadow:var(--shadow-card); }
+.action-surface { background:linear-gradient(145deg,var(--surface),var(--surface-soft)); }
+
+.mobile-workspace-header {
+  border-block-end:1px solid color-mix(in srgb,var(--border) 86%,transparent);
+  background:color-mix(in srgb,var(--surface) 88%,transparent);
+  backdrop-filter:blur(14px);
+}
+.mobile-workspace-header > strong {
+  max-inline-size:min(44vw,420px);
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+.mobile-workspace-header button { min-block-size:44px; }
+
+.mobile-qora-host {
+  border-color:color-mix(in srgb,var(--brand) 22%,var(--border));
+  background:linear-gradient(135deg,color-mix(in srgb,var(--brand) 9%,var(--surface)),var(--surface) 62%);
+}
+.mobile-qora-host strong { letter-spacing:-.015em; }
+.mobile-qora-host p { max-inline-size:52ch; line-height:1.55; }
+
+.journey-home-tile {
+  overflow:hidden;
+  border-color:color-mix(in srgb,var(--brand) 24%,var(--border));
+  background:linear-gradient(145deg,var(--surface),color-mix(in srgb,var(--brand) 7%,var(--surface)));
+}
+.journey-home-tile::after {
+  content:"";
+  position:absolute;
+  z-index:-1;
+  inline-size:150px;
+  block-size:150px;
+  inset-inline-end:-72px;
+  inset-block-start:-86px;
+  border-radius:50%;
+  background:radial-gradient(circle,rgb(var(--brand-rgb)/.18),transparent 70%);
+  pointer-events:none;
+}
+.journey-home-tile:hover { border-color:color-mix(in srgb,var(--brand) 52%,var(--border)); box-shadow:0 16px 42px rgb(var(--brand-rgb)/.12); }
+
+.cut-button:not(:disabled):hover { border-color:color-mix(in srgb,var(--brand) 55%,var(--border)); box-shadow:0 8px 22px rgb(var(--brand-rgb)/.1); }
+.cut-button--primary:not(:disabled) { box-shadow:0 10px 24px rgb(var(--brand-rgb)/.2); }
+.cut-button:disabled { cursor:not-allowed; filter:saturate(.55); }
+
+.field-control,
+:where(input,select,textarea) { min-block-size:44px; }
+.field-control:focus,
+:where(input,select,textarea):focus { border-color:var(--brand); }
+
+.mobile-workspace-scroll {
+  min-block-size:0;
+  overflow-x:hidden;
+  overflow-y:auto;
+  -webkit-overflow-scrolling:touch;
+  scrollbar-width:thin;
+  scrollbar-color:color-mix(in srgb,var(--brand) 45%,var(--border)) transparent;
+  overscroll-behavior:contain;
+}
+.journey-embedded-view { animation:release-view-in var(--motion-standard) var(--ease-standard); }
+.journey-embedded-view { min-block-size:100%; padding-block-end:clamp(20px,4vh,48px); }
+
+/* v2.10.19: the Passport progress track owns its geometry. It is 20% shorter
+   overall and every milestone/popover is positioned against this same track. */
+.mobile-passport-progress {
+  position:relative;
+  inline-size:80%;
+  justify-self:center;
+  overflow:visible;
+}
+.passport-milestone { transform:translate(-50%,-50%); }
+.passport-milestone > span {
+  position:absolute;
+  inset-block-start:calc(100% + 12px);
+  inset-inline-start:50%;
+  z-index:10020;
+  inline-size:max-content;
+  min-inline-size:180px;
+  max-inline-size:min(230px,calc(100vw - 24px));
+  transform:translateX(-50%);
+}
+.passport-milestone.is-first > span { inset-inline-start:-10px; transform:none; }
+.passport-milestone.is-last > span { inset-inline-start:auto; inset-inline-end:-10px; transform:none; }
+
+/* Journey cards: stronger, product-specific gradients with readable surfaces. */
+.is-home-workspace .journey-goal-card {
+  background:linear-gradient(122deg,color-mix(in srgb,#23cfae 28%,var(--panel)),color-mix(in srgb,var(--brand) 18%,var(--panel)) 58%,color-mix(in srgb,#d7ff56 17%,var(--panel))) !important;
+}
+.is-home-workspace .journey-mission-card {
+  background:linear-gradient(132deg,color-mix(in srgb,#7257ff 30%,var(--panel)),color-mix(in srgb,#27cfff 17%,var(--panel))) !important;
+}
+.is-home-workspace .journey-leaderboard-card {
+  background:linear-gradient(138deg,color-mix(in srgb,#dfff55 26%,var(--panel)),color-mix(in srgb,#f2c94c 18%,var(--panel))) !important;
+}
+.is-home-workspace .journey-reward-card {
+  background:linear-gradient(120deg,color-mix(in srgb,#5170ff 30%,var(--panel)),color-mix(in srgb,#ad63ff 22%,var(--panel)) 55%,color-mix(in srgb,#dfff55 13%,var(--panel))) !important;
+}
+@keyframes release-view-in { from { opacity:0; transform:translateY(6px); } to { opacity:1; transform:none; } }
+
+@media (max-width:767px) {
+  .mobile-workspace-header { padding-inline:max(10px,env(safe-area-inset-left)) max(10px,env(safe-area-inset-right)); }
+  .mobile-workspace-header button span { display:none; }
+  .mobile-workspace-header > strong { max-inline-size:54vw; font-size:.86rem; }
+  .mobile-workspace-scroll { scroll-padding-block-end:calc(104px + env(safe-area-inset-bottom)); }
+  .journey-vnext { gap:12px; }
+  .journey-home-tile { min-block-size:116px; }
+  .surface,
+  .brand-surface,
+  .action-surface { border-radius:var(--radius-nested); }
+}
+
+@media (max-width:359px) {
+  .mobile-workspace-header > strong { max-inline-size:46vw; }
+  .mobile-workspace-scroll { padding-inline:10px; }
+}
+
+@media (prefers-reduced-motion:reduce) {
+  *,*::before,*::after { animation-duration:.01ms !important; animation-iteration-count:1 !important; transition-duration:.01ms !important; }
+  :where(button, [role="button"], [role="link"]):active:not(:disabled) { transform:none; }
+}
+
+@media (forced-colors:active) {
+  :where(button, a, input, select, textarea):focus-visible { outline:3px solid Highlight; }
+  .surface,.brand-surface,.action-surface,.data-surface { border:1px solid CanvasText; }
+}
+
+.s3-route-pending{position:fixed;inset:0;z-index:1200;min-height:100dvh;background:var(--s3-canvas,#0b0b12);pointer-events:none}.s3-route-pending__line{position:absolute;inset:0 0 auto;height:2px;background:linear-gradient(90deg,transparent,var(--s3-primary,#7c5cff),transparent);transform-origin:left;animation:s3RoutePending 700ms ease-out both}@keyframes s3RoutePending{from{transform:scaleX(.08);opacity:.45}to{transform:scaleX(1);opacity:1}}@media(prefers-reduced-motion:reduce){.s3-route-pending__line{animation:none}}

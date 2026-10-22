@@ -1,0 +1,150 @@
+/* RUN A — semantic Light-theme closure. Geometry is intentionally untouched. */
+html[data-theme='light'],
+html[data-theme='light'] body,
+html[data-theme='light'] #root {
+  background: var(--s3-canvas);
+}
+
+html[data-theme='light'] .recovery-shell {
+  --s3-canvas: var(--s3-neutral-50);
+  --s3-surface: var(--s3-neutral-0);
+  --s3-surface-raised: var(--s3-neutral-25);
+  --s3-surface-interactive: var(--s3-neutral-100);
+  --s3-border: var(--s3-neutral-200);
+  --s3-border-strong: var(--s3-neutral-300);
+  --s3-text-primary: var(--s3-neutral-900);
+  --s3-text-secondary: var(--s3-neutral-600);
+  --s3-text-muted: var(--s3-neutral-500);
+  --s3-primary: var(--s3-brand-500);
+  --run-a-canvas: var(--s3-canvas);
+  --run-a-surface: var(--s3-surface);
+  --run-a-surface-raised: var(--s3-surface-raised);
+  --run-a-surface-interactive: var(--s3-surface-interactive);
+  --run-a-line: var(--s3-border);
+  --run-a-line-strong: var(--s3-border-strong);
+  --run-a-text: var(--s3-text-primary);
+  --run-a-text-secondary: var(--s3-text-secondary);
+  --run-a-text-muted: var(--s3-text-muted);
+  --run-a-accent: var(--s3-primary);
+  --run-a-nav-active: var(--s3-primary-pressed);
+  --run-a-shadow: var(--s3-shadow-1);
+  color: var(--run-a-text);
+  background: radial-gradient(circle at 50% 10%, color-mix(in srgb, var(--s3-qora-violet) 13%, transparent), transparent 30%), var(--run-a-canvas);
+}
+
+html[data-theme='light'] :is(.fc-page, .trs-page) {
+  --p175-text: var(--run-a-text);
+  --p175-muted: var(--run-a-text-muted);
+  --p175-line: var(--run-a-line);
+  --fc-x-surface: color-mix(in srgb, var(--run-a-surface) 94%, transparent);
+  --fc-x-edge: var(--run-a-line);
+  color: var(--run-a-text);
+}
+
+html[data-theme='light'] :is(.eu-qora-stage, .eu-object, .eu-state, .eu-modal, .eu-local-nav, .eu-field input, .eu-field select) {
+  --eu-surface: var(--run-a-surface);
+  --eu-line: var(--run-a-line);
+  --eu-muted: var(--run-a-text-muted);
+  --eu-text: var(--run-a-text);
+  --eu-accent: var(--run-a-accent);
+}
+
+html[data-theme='light'] :is(
+  .fc-panel,
+  .fc-identity,
+  .fc-metrics,
+  .fc-products > div > a,
+  .fc-holdings,
+  .fc-list article,
+  .fc-activity article,
+  .fc-proposals > article,
+  .fc-predictions article,
+  .fc-feed article,
+  .fc-owned > a,
+  .fc-shield-object,
+  .fc-insight,
+  .fc-prize-cue,
+  .fc-modules,
+  .fc-ticket-current,
+  .fc-era-intro aside,
+  .trs-object,
+  .trs-form,
+  .trs-detail,
+  .trs-result,
+  .trs-prize,
+  .trs-capacity,
+  .trs-contract,
+  .trs-assessment,
+  .trs-rank,
+  .trs-ticket,
+  .trs-settings,
+  .trs-help,
+  .trs-trust,
+  .trs-learning,
+  .trs-status,
+  .trs-network,
+  .trs-gallery,
+  .trs-rewards,
+  .trs-level-map,
+  .trs-suggestion,
+  .trs-leaderboard,
+  .trs-metrics,
+  .trs-rows
+) {
+  border-color: var(--run-a-line);
+  background: linear-gradient(145deg, color-mix(in srgb, var(--run-a-surface-raised) 92%, var(--run-a-accent) 8%), var(--run-a-surface));
+  color: var(--run-a-text);
+  box-shadow: var(--run-a-shadow);
+}
+
+html[data-theme='light'] :is(.fc-modules > div > a, .fc-era-intro aside, .fc-ticket-current, .fc-ticket-current footer a) {
+  color: var(--run-a-text);
+}
+
+html[data-theme='light'] :is(.fc-era-intro aside small, .fc-ticket-current header small, .fc-ticket-current footer) {
+  color: var(--run-a-text-muted);
+}
+
+html[data-theme='light'] .recovery-shell :is(.recovery-system-fab, .recovery-icon-button) {
+  border-color: var(--run-a-line) !important;
+  background: var(--run-a-surface-raised) !important;
+  color: var(--run-a-text-secondary) !important;
+  box-shadow: var(--run-a-shadow) !important;
+}
+
+html[data-theme='light'] .recovery-system-menu {
+  border-color: var(--run-a-line);
+  background: var(--run-a-surface-raised);
+  color: var(--run-a-text);
+  box-shadow: var(--s3-shadow-3);
+}
+
+html[data-theme='light'] .recovery-system-menu :is(a, button) {
+  color: var(--run-a-text);
+}
+
+html[data-theme='light'] .recovery-system-menu :is(a, button):hover {
+  background: var(--run-a-surface-interactive);
+}
+
+html[data-theme='light'] .recovery-primary-nav.is-mobile {
+  border-color: var(--run-a-line) !important;
+  background: linear-gradient(180deg, color-mix(in srgb, var(--run-a-surface) 94%, transparent), var(--run-a-surface-raised)) !important;
+  box-shadow: 0 -18px 48px color-mix(in srgb, var(--run-a-text) 10%, transparent) !important;
+}
+
+html[data-theme='light'] .recovery-primary-nav.is-desktop {
+  border-color: var(--run-a-line) !important;
+  background: var(--run-a-surface) !important;
+  color: var(--run-a-text-secondary);
+  box-shadow: var(--run-a-shadow) !important;
+}
+
+html[data-theme='light'] .recovery-primary-nav.is-desktop a {
+  color: var(--run-a-text-secondary);
+}
+
+html[data-theme='light'] .recovery-primary-nav.is-desktop a.is-active {
+  background: var(--run-a-surface-interactive) !important;
+  color: var(--run-a-nav-active);
+}

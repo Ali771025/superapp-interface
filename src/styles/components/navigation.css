@@ -1,0 +1,250 @@
+.nexus-rail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3);
+  padding: 14px 10px;
+  overflow: visible;
+  border-inline-end: 1px solid var(--border);
+  background: color-mix(in srgb, var(--surface) 96%, transparent);
+  backdrop-filter: blur(16px) saturate(115%);
+}
+
+.nexus-rail-nav {
+  inline-size: 100%;
+  min-block-size: 0;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.nexus-rail-tools {
+  inline-size: 100%;
+  display: grid;
+  justify-items: center;
+  gap: 4px;
+}
+
+.nexus-rail-link,
+.nexus-rail-qora,
+.nexus-rail-explore {
+  inline-size: 64px;
+  min-inline-size: 64px;
+  min-block-size: 54px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  padding: 5px;
+  overflow: visible;
+  border: 0;
+  border-radius: var(--radius-nested);
+  background: transparent;
+  color: var(--text-secondary);
+  text-align: center;
+  position: relative;
+  transition: color var(--motion-fast) var(--ease-standard), background-color var(--motion-fast) var(--ease-standard);
+}
+
+.nexus-rail-link > svg,
+.nexus-rail-explore > svg {
+  flex: 0 0 auto;
+  inline-size: 20px;
+  block-size: 20px;
+}
+
+.nexus-rail-link span,
+.nexus-rail-qora small,
+.nexus-rail-explore span {
+  display: block;
+  max-inline-size: 100%;
+  overflow: visible;
+  color: inherit;
+  font-size: .6875rem;
+  font-weight: 680;
+  line-height: 1.16;
+  white-space: normal;
+}
+
+.nexus-rail-link:hover,
+.nexus-rail-explore:hover,
+.nexus-rail-qora:hover {
+  color: var(--text);
+  background: var(--surface-interactive);
+}
+
+.nexus-rail-link.is-active,
+.nexus-rail-qora.is-active {
+  color: var(--brand);
+  background: rgba(var(--brand-rgb), .11);
+  box-shadow: inset 0 0 0 1px rgba(var(--brand-rgb), .18);
+}
+
+.nexus-rail-link.is-active::before,
+.nexus-rail-qora.is-active::before {
+  content: '';
+  position: absolute;
+  inset-inline-start: -10px;
+  inline-size: 3px;
+  block-size: 22px;
+  border-radius: 99px;
+  background: var(--brand);
+}
+
+.nexus-rail-qora {
+  min-block-size: 66px;
+}
+
+.ds-topbar,
+.nexus-topbar {
+  position: sticky;
+  inset-block-start: 0;
+  z-index: var(--layer-sticky);
+  block-size: var(--shell-topbar);
+  min-block-size: var(--shell-topbar);
+  display: grid;
+  grid-template-columns: minmax(0,1fr) auto;
+  align-items: center;
+  gap: 12px;
+  padding-inline: 18px;
+  border-block-end: 1px solid var(--border);
+  background: color-mix(in srgb, var(--canvas) 94%, transparent);
+  backdrop-filter: blur(16px) saturate(115%);
+}
+.nexus-topbar.is-transparent { background: transparent; }
+.nexus-topbar-brand { min-inline-size: 0; display: flex; align-items: center; gap: 8px; }
+.nexus-topbar-brand img { block-size: 30px; max-inline-size: 148px; }
+.nexus-topbar-actions { display: flex; align-items: center; justify-self: end; gap: 4px; }
+.nexus-topbar-icon,
+.vf-fab-trigger {
+  inline-size: 42px;
+  block-size: 42px;
+  display: grid;
+  place-items: center;
+  border-radius: var(--radius-control);
+  color: var(--text-secondary);
+}
+.nexus-topbar-icon:hover,
+.vf-fab-trigger:hover { color: var(--text); background: var(--surface-interactive); }
+.vf-header-notifications,
+.vf-header-theme > button {
+  position: relative;
+  inline-size: 44px;
+  block-size: 44px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-control);
+  background: var(--surface);
+  color: var(--text-secondary);
+}
+.vf-header-notifications:hover,
+.vf-header-theme > button:hover { color: var(--brand); background: var(--surface-interactive); }
+.vf-header-notifications em {
+  position: absolute;
+  inset-block-start: 4px;
+  inset-inline-end: 4px;
+  min-inline-size: 17px;
+  block-size: 17px;
+  display: grid;
+  place-items: center;
+  padding-inline: 3px;
+  border: 2px solid var(--surface);
+  border-radius: var(--radius-pill);
+  background: var(--brand);
+  color: #fff;
+  font-size: .6rem;
+  font-style: normal;
+  font-weight: 760;
+  line-height: 1;
+}
+.vf-fab-menu a>em {
+  min-inline-size:18px;
+  block-size:18px;
+  display:grid;
+  place-items:center;
+  margin-inline-start:auto;
+  padding-inline:4px;
+  border-radius:99px;
+  background:var(--brand);
+  color:#fff;
+  font-size:.62rem;
+  font-style:normal;
+  font-weight:760;
+}
+
+.nexus-dock {
+  position: fixed;
+  inset-inline: 10px;
+  inset-block-end: max(8px, env(safe-area-inset-bottom));
+  z-index: var(--layer-dock);
+  block-size: var(--shell-dock);
+  padding: 6px;
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  background: color-mix(in srgb, var(--surface) 96%, transparent);
+  box-shadow: var(--shadow-raised);
+  backdrop-filter: blur(18px);
+}
+.nexus-dock-link { min-inline-size: 0; min-block-size: 60px; border-radius: 16px; }
+.nexus-dock-link small { font-size: .7rem; }
+.nexus-dock-link.is-active { color: var(--brand); background: rgba(var(--brand-rgb), .1); }
+.nexus-dock-link.is-qora { transform: none; }
+.nexus-dock-link.is-qora:active { transform: scale(.98); }
+
+@media (min-width: 1280px) {
+  .nexus-rail {
+    align-items: stretch;
+    padding: 16px 12px;
+  }
+  .nexus-rail-nav,
+  .nexus-rail-tools {
+    align-items: stretch;
+    justify-items: stretch;
+  }
+  .nexus-rail-link,
+  .nexus-rail-qora,
+  .nexus-rail-explore {
+    inline-size: 100%;
+    min-inline-size: 0;
+    min-block-size: 48px;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 11px;
+    padding-inline: 13px;
+    text-align: start;
+  }
+  .nexus-rail-link span,
+  .nexus-rail-qora small,
+  .nexus-rail-explore span {
+    min-inline-size: 0;
+    font-size: .8rem;
+    line-height: 1.3;
+    white-space: nowrap;
+  }
+  .nexus-rail-link.is-active::before,
+  .nexus-rail-qora.is-active::before {
+    inset-inline-start: -12px;
+  }
+  .nexus-rail-qora {
+    min-block-size: 58px;
+  }
+  .ds-topbar,
+  .nexus-topbar { padding-inline: 26px; }
+}
+
+@media (max-width: 767px) {
+  .ds-topbar,
+  .nexus-topbar { padding-inline: 12px; border-block-end-color: transparent; background: transparent; backdrop-filter: none; }
+  .nexus-topbar-brand img { block-size: 26px; max-inline-size: 118px; }
+}
+
+@media (max-width: 359px) {
+  .responsive-unified-shell .nexus-topbar-brand img { block-size: 22px; max-inline-size: 96px; }
+  .responsive-unified-shell .ds-wallet-control { max-inline-size: 118px; }
+  .responsive-unified-shell .ds-wallet-control > span:last-child { max-inline-size: 72px; overflow: hidden; text-overflow: ellipsis; }
+}

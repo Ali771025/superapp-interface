@@ -1,0 +1,43 @@
+/* Final adaptive ownership for QA-critical shell, chat and profile behaviors. */
+
+.vf-settings-profile {
+  min-block-size: 92px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.vf-settings-identity {
+  min-inline-size: 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.vf-settings-identity > span { min-inline-size: 0; }
+.vf-settings-identity strong,
+.vf-settings-identity small { display: block; }
+.vf-settings-identity strong { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.vf-settings-profile > button { flex: 0 0 auto; }
+
+@media (max-width: 1023px) {
+  .ds-main-content.is-fill-height.has-no-padding.has-mobile-dock { padding-block-end: 0; }
+}
+
+@media (max-width: 767px) {
+  .vf-settings-profile { align-items: center; padding: 12px; }
+  .vf-settings-identity { gap: 10px; }
+  .vf-settings-profile > button {
+    min-inline-size: 44px;
+    padding-inline: 10px;
+    border-block-start: 0;
+  }
+}
+
+@media (max-width: 430px) {
+  .vf-settings-profile > button { font-size: 0; gap: 0; }
+  .vf-settings-profile > button svg { inline-size: 18px; block-size: 18px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .territory-detail { animation: none; }
+}

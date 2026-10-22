@@ -1,0 +1,82 @@
+:root {
+  --shell-rail-width: 88px;
+  --shell-topbar: 64px;
+  --shell-preview: 28px;
+  --shell-dock: 76px;
+
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+
+  --radius-sm: 8px;
+  --radius-control: 12px;
+  --radius-nested: 16px;
+  --radius-card: 20px;
+  --radius-panel: 24px;
+  --radius-pill: 999px;
+  --action-control-height: 44px;
+  --action-control-radius: 12px;
+
+  --brand: #6d57f5;
+  --brand-hover: #5941e6;
+  --brand-strong: #4b35d4;
+  --brand-rgb: 109, 87, 245;
+  --positive: #16875f;
+  --warning: #b86a00;
+  --negative: #c53c50;
+  --info: #087fa8;
+
+  --motion-fast: 160ms;
+  --motion-standard: 220ms;
+  --motion-slow: 280ms;
+  --ease-standard: cubic-bezier(.2,.8,.2,1);
+
+  --layer-base: 0;
+  --layer-sticky: 20;
+  --layer-dock: 30;
+  --layer-popover: 50;
+  --layer-modal: 10000;
+  --layer-toast: 10100;
+  --layer-skip: 10200;
+
+  --container-standard: 1180px;
+  --container-wide: 1440px;
+}
+
+.level-badge {
+  position:absolute;
+  inset-inline-end:-2px;
+  inset-block-end:-2px;
+  display:grid;
+  inline-size:28px;
+  block-size:28px;
+  place-items:center;
+  border:2px solid var(--panel);
+  background:var(--text);
+  color:var(--panel);
+  font-size:.7rem;
+  font-weight:800;
+  clip-path:polygon(50% 0,88% 18%,100% 56%,76% 92%,34% 100%,4% 70%,8% 28%);
+}
+.level-badge--2,.level-badge--5,.level-badge--8,.level-badge--11,.level-badge--14,.level-badge--17 { clip-path:polygon(50% 0,100% 28%,84% 86%,22% 100%,0 42%); }
+.level-badge--3,.level-badge--6,.level-badge--9,.level-badge--12,.level-badge--15,.level-badge--18 { clip-path:polygon(50% 0,94% 25%,94% 75%,50% 100%,6% 75%,6% 25%); }
+.level-badge--4,.level-badge--7,.level-badge--10,.level-badge--13,.level-badge--16,.level-badge--19 { clip-path:polygon(50% 0,62% 34%,100% 38%,70% 60%,80% 100%,50% 76%,20% 100%,30% 60%,0 38%,38% 34%); }
+
+@media (max-width: 1023px) {
+  :root {
+    --shell-rail-width: 0px;
+    --shell-topbar: 58px;
+    --shell-preview: 26px;
+  }
+}
+
+@media (min-width: 1280px) {
+  :root {
+    --shell-rail-width: 196px;
+  }
+}

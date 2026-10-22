@@ -1,0 +1,24 @@
+:root {
+  --font-body: 'Space Grotesk Variable', 'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
+  --font-display: 'Space Grotesk Variable', 'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
+}
+
+body, button, input, select, textarea {
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+:where(h1, h2, h3, p) { margin-block: 0; }
+:where(h1, h2, h3) { color: var(--text); text-wrap: balance; }
+.qora-app-shell :where(h1, h2, h3) { font-family: var(--font-display); }
+h1 { font-size: clamp(1.45rem, 2vw, 2rem); line-height: 1.15; letter-spacing: -.03em; }
+h2 { font-size: clamp(1.1rem, 1.5vw, 1.35rem); line-height: 1.25; letter-spacing: -.018em; }
+h3 { font-size: 1rem; line-height: 1.35; }
+p { color: var(--text-secondary); line-height: 1.62; }
+small { color: var(--text-muted); line-height: 1.4; }
+.qora-app-shell :where(.font-display, .qora-wordmark) { font-family: var(--font-display); }
+.tabular-nums, bdi, [data-number] {
+  font-family: var(--font-body);
+  font-variant-numeric: tabular-nums lining-nums;
+}

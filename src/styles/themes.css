@@ -1,0 +1,37 @@
+:root {
+  --canvas: #f3f4f8;
+  --surface: #ffffff;
+  --surface-raised: #f8f8fb;
+  --surface-interactive: #f0f1f7;
+  --text: #171821;
+  --text-secondary: #55596a;
+  --text-muted: #74798a;
+  --border: #d4d7e1;
+  --border-strong: #b8bdcb;
+  --scrim: rgba(11, 12, 19, .58);
+  --shadow-card: 0 1px 2px rgba(16, 18, 27, .05), 0 8px 26px rgba(16, 18, 27, .05);
+  --shadow-raised: 0 18px 48px rgba(16, 18, 27, .14);
+  --icon-color: #090a0d;
+  color-scheme: light;
+}
+
+html:not(.light) {
+  --canvas: #0d0e13;
+  --surface: #15161d;
+  --surface-raised: #1b1c25;
+  --surface-interactive: #222430;
+  --text: #f4f4f8;
+  --text-secondary: #b7bac7;
+  --text-muted: #9095a6;
+  --border: #303340;
+  --border-strong: #454957;
+  --scrim: rgba(0, 0, 0, .7);
+  --shadow-card: 0 1px 0 rgba(255, 255, 255, .035), 0 14px 34px rgba(0, 0, 0, .2);
+  --shadow-raised: 0 24px 64px rgba(0, 0, 0, .48);
+  --icon-color: #ffffff;
+  color-scheme: dark;
+}
+
+body { background: var(--canvas); color: var(--text); }
+[data-et-icon] { color: var(--icon-color); }
+.ds-app-shell { background: radial-gradient(900px 480px at 90% -20%, rgba(var(--brand-rgb), .12), transparent 68%), var(--canvas); color: var(--text); }

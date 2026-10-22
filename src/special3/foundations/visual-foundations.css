@@ -1,0 +1,53 @@
+[data-special3].s3-adaptive-shell {
+  --s3-phase03-ambient-violet: #a45eff;
+  background-color: var(--s3-living-canvas-base);
+  background-image:
+    radial-gradient(78% 62% at 12% 8%, color-mix(in srgb, var(--s3-living-canvas-intelligence-mid) var(--s3-ambient-intensity), transparent), transparent 72%),
+    radial-gradient(70% 58% at 88% 18%, color-mix(in srgb, var(--s3-phase03-ambient-violet) var(--s3-ambient-intensity), transparent), transparent 74%),
+    radial-gradient(88% 68% at 54% 104%, color-mix(in srgb, var(--s3-living-canvas-intelligence-end) var(--s3-ambient-intensity), transparent), transparent 76%);
+  background-position: 0% 0%, 100% 0%, 50% 100%;
+  background-size: 138% 138%, 146% 146%, 154% 154%;
+  animation: s3-living-canvas-drift var(--s3-ambient-duration) var(--s3-ease-standard) infinite alternate;
+}
+
+[data-special3].s3-adaptive-shell .s3-workspace {
+  background-color: transparent;
+}
+
+[data-special3] :is(.glass-featured, .glass-subtle, .glass-overlay) {
+  border: 1px solid var(--s3-glass-border);
+  background: rgb(var(--s3-glass-surface-rgb) / var(--s3-glass-background-alpha));
+  box-shadow: var(--s3-glass-shadow);
+  -webkit-backdrop-filter: blur(var(--s3-glass-blur));
+  backdrop-filter: blur(var(--s3-glass-blur));
+}
+
+[data-special3] .glass-featured {
+  --s3-glass-blur: var(--s3-glass-blur-featured);
+}
+
+[data-special3] .glass-subtle {
+  --s3-glass-blur: var(--s3-glass-blur-subtle);
+  box-shadow: none;
+}
+
+[data-special3] .glass-overlay {
+  --s3-glass-blur: var(--s3-glass-blur-overlay);
+  --s3-glass-background-alpha: calc(var(--s3-glass-theme-background-alpha) + 0.12);
+}
+
+@keyframes s3-living-canvas-drift {
+  0% {
+    background-position: 0% 0%, 100% 0%, 50% 100%;
+  }
+  100% {
+    background-position: 16% 12%, 84% 16%, 44% 82%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-special3].s3-adaptive-shell {
+    animation: none;
+    background-position: 8% 6%, 92% 8%, 48% 92%;
+  }
+}

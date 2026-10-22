@@ -1,0 +1,7 @@
+export {
+  STOCK_FULL_PRICE_ETER as STOCK_BASE_VALUE_ETER,
+  STOCK_MINIMUM_INITIAL_ETER,
+  STOCK_MULTIPLIERS,
+  STOCK_PHASE_ALLOCATIONS,
+  STOCK_TOTAL_SUPPLY,
+} from "../../special3/products/stock/stockProtocol";
