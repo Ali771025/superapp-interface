@@ -1,0 +1,2128 @@
+{
+  "schemaVersion": 2,
+  "sourceProject": "eternity-special-main-v2.10.20",
+  "generatedAt": "2026-08-08T10:01:06.165Z",
+  "integrityContract": {
+    "requiredProgressionChain": [
+      "goal",
+      "mission",
+      "task",
+      "product-action",
+      "verified-event",
+      "achievement-evaluation",
+      "eq-reward-ledger",
+      "level-rank-reputation-access",
+      "journey-progress-unlock",
+      "passport-update",
+      "qora-next-best-action"
+    ],
+    "zeroProgressionStatuses": [
+      "pending",
+      "failed",
+      "rejected",
+      "duplicate",
+      "simulation",
+      "unverified"
+    ],
+    "duplicatePolicy": "same stable event identity produces zero additional Achievement, EQ, Reward or Journey progress",
+    "simulationPolicy": "simulation may show a clearly labeled estimate but records zero real progression",
+    "transactionConfirmationPolicy": "confirmation alone cannot complete Journey; verified/indexed event and progression commit are required",
+    "referral": {
+      "rate": 0.1,
+      "scope": "eligible line-1 personal base EQ when direct is at or below sponsor level",
+      "recursiveCompounding": false,
+      "ledger": "separate referral EQ",
+      "affectsPersonalLevelEq": false
+    },
+    "eid": {
+      "rewardedPurchaseCap": 20,
+      "eqPerPurchase": 20,
+      "totalEqCap": 400
+    }
+  },
+  "levels": {
+    "count": 19,
+    "thresholds": [
+      100,
+      250,
+      600,
+      1500,
+      3500,
+      7500,
+      15000,
+      30000,
+      55000,
+      85000,
+      140000,
+      210000,
+      310000,
+      440000,
+      600000,
+      800000,
+      1100000,
+      1450000,
+      1900000
+    ]
+  },
+  "ruleCount": 79,
+  "rules": [
+    {
+      "product": "Generator",
+      "achievementId": "generator-turnover-10",
+      "eventType": "generator.turnover.indexed",
+      "milestone": {
+        "label": "$10 turnover",
+        "threshold": 10,
+        "unit": "USD indexed turnover"
+      },
+      "prerequisite": "verified eligible product event; integrity and anti-duplicate gate passed",
+      "qualificationRule": "combined eligible indexed Generate/Sell/Transfer USD turnover reaches 10; pre-activation turnover is excluded",
+      "eqDelta": 10,
+      "rewardEffect": "+10 personal EQ; non-EQ reward: UNRESOLVED — SOURCE REQUIRED",
+      "repeatability": "once-per-achievement-id",
+      "cap": 1,
+      "forwardOnly": true,
+      "referralEligibility": "eligible under global line-1 rule when direct is at or below sponsor level",
+      "referralEqAffectsPersonalLevelEq": false,
+      "evidence": [
+        "src/data/achievementProtocol.ts",
+        "ETERNITY_SPECIAL_3.0_User_Flow_v1.1_Achievement_EQ.drawio",
+        "ETERNITY_SPECIAL_3.0_User_Flow_v1.1_README_FA.md",
+        "supplied Achievement/EQ protocol decisions"
+      ],
+      "journeyImpactCategory": "economy-value-creation"
+    },
+    {
+      "product": "Generator",
+      "achievementId": "generator-turnover-50",
+      "eventType": "generator.turnover.indexed",
+      "milestone": {
+        "label": "$50 turnover",
+        "threshold": 50,
+        "unit": "USD indexed turnover"
+      },
+      "prerequisite": "verified eligible product event; integrity and anti-duplicate gate passed",
+      "qualificationRule": "combined eligible indexed Generate/Sell/Transfer USD turnover reaches 50; pre-activation turnover is excluded",
+      "eqDelta": 50,
+      "rewardEffect": "+50 personal EQ; non-EQ reward: UNRESOLVED — SOURCE REQUIRED",
+      "repeatability": "once-per-achievement-id",
+      "cap": 1,
+      "forwardOnly": true,
+      "referralEligibility": "eligible under global line-1 rule when direct is at or below sponsor level",
+      "referralEqAffectsPersonalLevelEq": false,
+      "evidence": [
+        "src/data/achievementProtocol.ts",
+        "ETERNITY_SPECIAL_3.0_User_Flow_v1.1_Achievement_EQ.drawio",
+        "ETERNITY_SPECIAL_3.0_User_Flow_v1.1_README_FA.md",
+        "supplied Achievement/EQ protocol decisions"
+      ],
+      "journeyImpactCategory": "economy-value-creation"
+    },
+    {
+      "product": "Generator",
+      "achievementId": "generator-turnover-200",
+      "eventType": "generator.turnover.indexed",
+      "milestone": {
+        "label": "$200 turnover",
+        "threshold": 200,
+        "unit": "USD indexed turnover"
+      },
+      "prerequisite": "verified eligible product event; integrity and anti-duplicate gate passed",
+      "qualificationRule": "combined eligible indexed Generate/Sell/Transfer USD turnover reaches 200; pre-activation turnover is excluded",
+      "eqDelta": 200,
+      "rewardEffect": "+200 personal EQ; non-EQ reward: UNRESOLVED — SOURCE REQUIRED",
+      "repeatability": "once-per-achievement-id",
+      "cap": 1,
+      "forwardOnly": true,
+      "referralEligibility": "eligible under global line-1 rule when direct is at or below sponsor level",
+      "referralEqAffectsPersonalLevelEq": false,
+      "evidence": [
+        "src/data/achievementProtocol.ts",
+        "ETERNITY_SPECIAL_3.0_User_Flow_v1.1_Achievement_EQ.drawio",
+        "ETERNITY_SPECIAL_3.0_User_Flow_v1.1_README_FA.md",
+        "supplied Achievement/EQ protocol decisions"
+      ],
+      "journeyImpactCategory": "economy-value-creation"
+    },
+    {
+      "product": "Generator",
+      "achievementId": "generator-turnover-1000",
+      "eventType": "generator.turnover.indexed",
+      "milestone": {
+        "label": "$1,000 turnover",
+        "threshold": 1000,
+        "unit": "USD indexed turnover"
+      },
+      "prerequisite": "verified eligible product event; integrity and anti-duplicate gate passed",
+      "qualificationRule": "combined eligible indexed Generate/Sell/Transfer USD turnover reaches 1000; pre-activation turnover is excluded",
+      "eqDelta": 1000,
+      "rewardEffect": "+1000 personal EQ; non-EQ reward: UNRESOLVED — SOURCE REQUIRED",
+      "repeatability": "once-per-achievement-id",
+      "cap": 1,
+      "forwardOnly": true,
+      "referralEligibility": "eligible under global line-1 rule when direct is at or below sponsor level",
+      "referralEqAffectsPersonalLevelEq": false,
+      "evidence": [
+        "src/data/achievementProtocol.ts",
+        "ETERNITY_SPECIAL_3.0_User_Flow_v1.1_Achievement_EQ.drawio",
+        "ETERNITY_SPECIAL_3.0_User_Flow_v1.1_README_FA.md",
+        "supplied Achievement/EQ protocol decisions"
+      ],
+      "journeyImpactCategory": "economy-value-creation"
+    },
+    {
+      "product": "Generator",
+      "achievementId": "generator-turnover-5000",
+      "eventType": "generator.turnover.indexed",
+      "milestone": {
+        "label": "$5,000 turnover",
+        "threshold": 5000,
+        "unit": "USD indexed turnover"
+      },
+      "prerequisite": "verified eligible product event; integrity and anti-duplicate gate passed",
+      "qualificationRule": "combined eligible indexed Generate/Sell/Transfer USD turnover reaches 5000; pre-activation turnover is excluded",
+      "eqDelta": 5000,
+      "rewardEffect": "+5000 personal EQ; non-EQ reward: UNRESOLVED — SOURCE REQUIRED",
+      "repeatability": "once-per-achievement-id",
+      "cap": 1,
+      "forwardOnly": true,
+      "referralEligibility": "eligible under global line-1 rule when direct is at or below sponsor level",
+      "referralEqAffectsPersonalLevelEq": false,
+      "evidence": [
+        "src/data/achievementProtocol.ts",
+        "ETERNITY_SPECIAL_3.0_User_Flow_v1.1_Achievement_EQ.drawio",
+        "ETERNITY_SPECIAL_3.0_User_Flow_v1.1_README_FA.md",
+        "supplied Achievement/EQ protocol decisions"
+      ],
+      "journeyImpactCategory": "economy-value-creation"
+    },
+    {
+      "product": "Generator",
+      "achievementId": "generator-turnover-20000",
+      "eventType": "generator.turnover.indexed",
+      "milestone": {
+        "label": "$20,000 turnover",
+        "threshold": 20000,
+        "unit": "USD indexed turnover"
+      },
+      "prerequisite": "verified eligible product event; integrity and anti-duplicate gate passed",
+      "qualificationRule": "combined eligible indexed Generate/Sell/Transfer USD turnover reaches 20000; pre-activation turnover is excluded",
+      "eqDelta": 20000,
+      "rewardEffect": "+20000 personal EQ; non-EQ reward: UNRESOLVED — SOURCE REQUIRED",
+      "repeatability": "once-per-achievement-id",
+      "cap": 1,
+      "forwardOnly": true,
+      "referralEligibility": "eligible under global line-1 rule when direct is at or below sponsor level",
+      "referralEqAffectsPersonalLevelEq": false,
+      "evidence": [
+        "src/data/achievementProtocol.ts",
+        "ETERNITY_SPECIAL_3.0_User_Flow_v1.1_Achievement_EQ.drawio",
+        "ETERNITY_SPECIAL_3.0_User_Flow_v1.1_README_FA.md",
+        "supplied Achievement/EQ protocol decisions"
+      ],
+      "journeyImpactCategory": "economy-value-creation"
+    },
+    {
+      "product": "Generator",
+      "achievementId": "generator-turnover-100000",
+      "eventType": "generator.turnover.indexed",
+      "milestone": {
+        "label": "$100,000 turnover",
+        "threshold": 100000,
+        "unit": "USD indexed turnover"
+      },
+      "prerequisite": "verified eligible product event; integrity and anti-duplicate gate passed",
+      "qualificationRule": "combined eligible indexed Generate/Sell/Transfer USD turnover reaches 100000; pre-activation turnover is excluded",
+      "eqDelta": 100000,
+      "rewardEffect": "+100000 personal EQ; non-EQ reward: UNRESOLVED — SOURCE REQUIRED",
+      "repeatability": "once-per-achievement-id",
+      "cap": 1,
+      "forwardOnly": true,
+      "referralEligibility": "eligible under global line-1 rule when direct is at or below sponsor level",
+      "referralEqAffectsPersonalLevelEq": false,
+      "evidence": [
+        "src/data/achievementProtocol.ts",
+        "ETERNITY_SPECIAL_3.0_User_Flow_v1.1_Achievement_EQ.drawio",
+        "ETERNITY_SPECIAL_3.0_User_Flow_v1.1_README_FA.md",
+        "supplied Achievement/EQ protocol decisions"
+      ],
+      "journeyImpactCategory": "economy-value-creation"
+    },
+    {
+      "product": "FanCommunity",
+      "achievementId": "fan-rank-0",
+      "eventType": "fan.rank.status.verified",
+      "milestone": {
+        "label": "Zero star",
+        "threshold": 0,
+        "unit": "rank"
+      },
+      "prerequisite": "verified current rank; activation/intake timing: UNRESOLVED — SOURCE REQUIRED",
+      "qualificationRule": "Current status: verified rank 0",
+      "eqDelta": 10,
+      "rewardEffect": "+10 personal EQ; non-EQ reward: UNRESOLVED — SOURCE REQUIRED",
+      "repeatability": "once-per-achievement-id",
+      "cap": 1,
+      "forwardOnly": true,
+      "referralEligibility": "eligible under global line-1 rule when direct is at or below sponsor level",
+      "referralEqAffectsPersonalLevelEq": false,
+      "evidence": [
+        "src/data/achievementProtocol.ts",
+        "ETERNITY_SPECIAL_3.0_User_Flow_v1.1_Achievement_EQ.drawio",
+        "ETERNITY_SPECIAL_3.0_User_Flow_v1.1_README_FA.md",
+        "supplied Achievement/EQ protocol decisions"
+      ],
+      "journeyImpactCategory": "community-rank"
+    },
+    {
+      "product": "FanCommunity",
+      "achievementId": "fan-rank-1-register",
+      "eventType": "fan.rank.registered",
+      "milestone": {
+        "label": "1-star registration",
+        "threshold": 1,
+        "unit": "rank"
+      },
+      "prerequisite": "verified registration event; integrity and anti-duplicate gate passed",
+      "qualificationRule": "Registration: verified rank 1",
+      "eqDelta": 50,
+      "rewardEffect": "+50 personal EQ; non-EQ reward: UNRESOLVED — SOURCE REQUIRED",
+      "repeatability": "once-per-achievement-id",
+      "cap": 1,
+      "forwardOnly": true,
+      "referralEligibility": "eligible under global line-1 rule when direct is at or below sponsor level",
+      "referralEqAffectsPersonalLevelEq": false,
+      "evidence": [
+        "src/data/achievementProtocol.ts",
+        "ETERNITY_SPECIAL_3.0_User_Flow_v1.1_Achievement_EQ.drawio",
+        "ETERNITY_SPECIAL_3.0_User_Flow_v1.1_README_FA.md",
+        "supplied Achievement/EQ protocol decisions"
+      ],
+      "journeyImpactCategory": "community-rank"
+    },
+    {
+      "product": "FanCommunity",
+      "achievementId": "fan-rank-1-upgrade",
+      "eventType": "fan.rank.upgraded",
+      "milestone": {
+        "label": "Upgrade to 1 star",
+        "threshold": 1,
+        "unit": "rank"
+      },
+      "prerequisite": "verified upgrade event; integrity and anti-duplicate gate passed",
+      "qualificationRule": "Upgrade: verified rank 1",
+      "eqDelta": 40,
+      "rewardEffect": "+40 personal EQ; non-EQ reward: UNRESOLVED — SOURCE REQUIRED",
+      "repeatability": "once-per-achievement-id",
+      "cap": 1,
+      "forwardOnly": true,
+      "referralEligibility": "eligible under global line-1 rule when direct is at or below sponsor level",
+      "referralEqAffectsPersonalLevelEq": false,
+      "evidence": [
+        "src/data/achievementProtocol.ts",
+        "ETERNITY_SPECIAL_3.0_User_Flow_v1.1_Achievement_EQ.drawio",
+        "ETERNITY_SPECIAL_3.0_User_Flow_v1.1_README_FA.md",
+        "supplied Achievement/EQ protocol decisions"
+      ],
+      "journeyImpactCategory": "community-rank"
+    },
+    {
+      "product": "FanCommunity",
+      "achievementId": "fan-rank-2-register",
+      "eventType": "fan.rank.registered",
+      "milestone": {
+        "label": "2-star registration",
+        "threshold": 2,
+        "unit": "rank"
+      },
+      "prerequisite": "verified registration event; integrity and anti-duplicate gate passed",
+      "qualificationRule": "Registration: verified rank 2",
+      "eqDelta": 200,
+      "rewardEffect": "+200 personal EQ; non-EQ reward: UNRESOLVED — SOURCE REQUIRED",
+      "repeatability": "once-per-achievement-id",
+      "cap": 1,
+      "forwardOnly": true,
+      "referralEligibility": "eligible under global line-1 rule when direct is at or below sponsor level",
+      "referralEqAffectsPersonalLevelEq": false,
+      "evidence": [
+        "src/data/achievementProtocol.ts",
+        "ETERNITY_SPECIAL_3.0_User_Flow_v1.1_Achievement_EQ.drawio",
+        "ETERNITY_SPECIAL_3.0_User_Flow_v1.1_README_FA.md",
+        "supplied Achievement/EQ protocol decisions"
+      ],
+      "journeyImpactCategory": "community-rank"
+    },
+    {
+      "product": "FanCommunity",
+      "achievementId": "fan-rank-2-upgrade",
+      "eventType": "fan.rank.upgraded",
+      "milestone": {
+        "label": "Upgrade to 2 stars",
+        "threshold": 2,
+        "unit": "rank"
+      },
+      "prerequisite": "verified upgrade event; integrity and anti-duplicate gate passed",
+      "qualificationRule": "Upgrade: verified rank 2",
+      "eqDelta": 150,
+      "rewardEffect": "+150 personal EQ; non-EQ reward: UNRESOLVED — SOURCE REQUIRED",
+      "repeatability": "once-per-achievement-id",
+      "cap": 1,
+      "forwardOnly": true,
+      "referralEligibility": "eligible under global line-1 rule when direct is at or below sponsor level",
+      "referralEqAffectsPersonalLevelEq": false,
+      "evidence": [
+        "src/data/achievementProtocol.ts",
+        "ETERNITY_SPECIAL_3.0_User_Flow_v1.1_Achievement_EQ.drawio",
+        "ETERNITY_SPECIAL_3.0_User_Flow_v1.1_README_FA.md",
+        "supplied Achievement/EQ protocol decisions"
+      ],
+      "journeyImpactCategory": "community-rank"
+    },
+    {
+      "product": "FanCommunity",
+      "achievementId": "fan-rank-3-register",
+      "eventType": "fan.rank.registered",
+      "milestone": {
+        "label": "3-star registration",
+        "threshold": 3,
+        "unit": "rank"
+      },
+      "prerequisite": "verified registration event; integrity and anti-duplicate gate passed",
+      "qualificationRule": "Registration: verified rank 3",
+      "eqDelta": 800,
+      "rewardEffect": "+800 personal EQ; non-EQ reward: UNRESOLVED — SOURCE REQUIRED",
+      "repeatability": "once-per-achievement-id",
+      "cap": 1,
+      "forwardOnly": true,
+      "referralEligibility": "eligible under global line-1 rule when direct is at or below sponsor level",
+      "referralEqAffectsPersonalLevelEq": false,
+      "evidence": [
+        "src/data/achievementProtocol.ts",
+        "ETERNITY_SPECIAL_3.0_User_Flow_v1.1_Achievement_EQ.drawio",
+        "ETERNITY_SPECIAL_3.0_User_Flow_v1.1_README_FA.md",
+        "supplied Achievement/EQ protocol decisions"
+      ],
+      "journeyImpactCategory": "community-rank"
+    },
+    {
+      "product": "FanCommunity",
+      "achievementId": "fan-rank-3-upgrade",
+      "eventType": "fan.rank.upgraded",
+      "milestone": {
+        "label": "Upgrade to 3 stars",
+        "threshold": 3,
+        "unit": "rank"
+      },
+      "prerequisite": "verified upgrade event; integrity and anti-duplicate gate passed",
+      "qualificationRule": "Upgrade: verified rank 3",
+      "eqDelta": 600,
+      "rewardEffect": "+600 personal EQ; non-EQ reward: UNRESOLVED — SOURCE REQUIRED",
+      "repeatability": "once-per-achievement-id",
+      "cap": 1,
+      "forwardOnly": true,
+      "referralEligibility": "eligible under global line-1 rule when direct is at or below sponsor level",
+      "referralEqAffectsPersonalLevelEq": false,
+      "evidence": [
+        "src/data/achievementProtocol.ts",
+        "ETERNITY_SPECIAL_3.0_User_Flow_v1.1_Achievement_EQ.drawio",
+        "ETERNITY_SPECIAL_3.0_User_Flow_v1.1_README_FA.md",
+        "supplied Achievement/EQ protocol decisions"
+      ],
+      "journeyImpactCategory": "community-rank"
+    },
+    {
+      "product": "FanCommunity",
+      "achievementId": "fan-rank-4-upgrade",
+      "eventType": "fan.rank.upgraded",
+      "milestone": {
+        "label": "Upgrade to 4 stars",
+        "threshold": 4,
+        "unit": "rank"
+      },
+      "prerequisite": "verified upgrade event; integrity and anti-duplicate gate passed",
+      "qualificationRule": "Upgrade: verified rank 4",
+      "eqDelta": 2000,
+      "rewardEffect": "+2000 personal EQ; non-EQ reward: UNRESOLVED — SOURCE REQUIRED",
+      "repeatability": "once-per-achievement-id",
+      "cap": 1,
+      "forwardOnly": true,
+      "referralEligibility": "eligible under global line-1 rule when direct is at or below sponsor level",
+      "referralEqAffectsPersonalLevelEq": false,
+      "evidence": [
+        "src/data/achievementProtocol.ts",
+        "ETERNITY_SPECIAL_3.0_User_Flow_v1.1_Achievement_EQ.drawio",
+        "ETERNITY_SPECIAL_3.0_User_Flow_v1.1_README_FA.md",
+        "supplied Achievement/EQ protocol decisions"
+      ],
+      "journeyImpactCategory": "community-rank"
+    },
+    {
+      "product": "FanCommunity",
+      "achievementId": "fan-rank-4-existing",
+      "eventType": "fan.rank.status.verified",
+      "milestone": {
+        "label": "Existing 4-star member",
+        "threshold": 4,
+        "unit": "rank"
+      },
+      "prerequisite": "verified current rank; activation/intake timing: UNRESOLVED — SOURCE REQUIRED",
+      "qualificationRule": "Current status: verified rank 4",
+      "eqDelta": 2800,
+      "rewardEffect": "+2800 personal EQ; non-EQ reward: UNRESOLVED — SOURCE REQUIRED",
+      "repeatability": "once-per-achievement-id",
+      "cap": 1,
+      "forwardOnly": true,
+      "referralEligibility": "eligible under global line-1 rule when direct is at or below sponsor level",
+      "referralEqAffectsPersonalLevelEq": false,
+      "evidence": [
+        "src/data/achievementProtocol.ts",
+        "ETERNITY_SPECIAL_3.0_User_Flow_v1.1_Achievement_EQ.drawio",
+        "ETERNITY_SPECIAL_3.0_User_Flow_v1.1_README_FA.md",
+        "supplied Achievement/EQ protocol decisions"
+      ],
+      "journeyImpactCategory": "community-rank"
+    },
+    {
+      "product": "FanCommunity",
+      "achievementId": "fan-direct-1",
+      "eventType": "fan.direct.active-count.verified",
+      "milestone": {
+        "label": "1 active direct",
+        "threshold": 1,
+        "unit": "active direct"
+      },
+      "prerequisite": "verified eligible product event; integrity and anti-duplicate gate passed",
+      "qualificationRule": "verified active first-line member count reaches 1",
+      "eqDelta": 10,
+      "rewardEffect": "+10 personal EQ; non-EQ reward: UNRESOLVED — SOURCE REQUIRED",
+      "repeatability": "once-per-achievement-id",
+      "cap": 1,
+      "forwardOnly": true,
+      "referralEligibility": "eligible under global line-1 rule when direct is at or below sponsor level",
+      "referralEqAffectsPersonalLevelEq": false,
+      "evidence": [
+        "src/data/achievementProtocol.ts",
+        "ETERNITY_SPECIAL_3.0_User_Flow_v1.1_Achievement_EQ.drawio",
+        "ETERNITY_SPECIAL_3.0_User_Flow_v1.1_README_FA.md",
+        "supplied Achievement/EQ protocol decisions"
+      ],
+      "journeyImpactCategory": "community-growth"
+    },
+    {
+      "product": "FanCommunity",
+      "achievementId": "fan-direct-4",
+      "eventType": "fan.direct.active-count.verified",
+      "milestone": {
+        "label": "4 active directs",
+        "threshold": 4,
+        "unit": "active direct"
+      },
+      "prerequisite": "verified eligible product event; integrity and anti-duplicate gate passed",
+      "qualificationRule": "verified active first-line member count reaches 4",
+      "eqDelta": 40,
+      "rewardEffect": "+40 personal EQ; non-EQ reward: UNRESOLVED — SOURCE REQUIRED",
+      "repeatability": "once-per-achievement-id",
+      "cap": 1,
+      "forwardOnly": true,
+      "referralEligibility": "eligible under global line-1 rule when direct is at or below sponsor level",
+      "referralEqAffectsPersonalLevelEq": false,
+      "evidence": [
+        "src/data/achievementProtocol.ts",
+        "ETERNITY_SPECIAL_3.0_User_Flow_v1.1_Achievement_EQ.drawio",
+        "ETERNITY_SPECIAL_3.0_User_Flow_v1.1_README_FA.md",
+        "supplied Achievement/EQ protocol decisions"
+      ],
+      "journeyImpactCategory": "community-growth"
+    },
+    {
+      "product": "FanCommunity",
+      "achievementId": "fan-direct-10",
+      "eventType": "fan.direct.active-count.verified",
+      "milestone": {
+        "label": "10 active directs",
+        "threshold": 10,
+        "unit": "active direct"
+      },
+      "prerequisite": "verified eligible product event; integrity and anti-duplicate gate passed",
+      "qualificationRule": "verified active first-line member count reaches 10",
+      "eqDelta": 100,
+      "rewardEffect": "+100 personal EQ; non-EQ reward: UNRESOLVED — SOURCE REQUIRED",
+      "repeatability": "once-per-achievement-id",
+      "cap": 1,
+      "forwardOnly": true,
+      "referralEligibility": "eligible under global line-1 rule when direct is at or below sponsor level",
+      "referralEqAffectsPersonalLevelEq": false,
+      "evidence": [
+        "src/data/achievementProtocol.ts",
+        "ETERNITY_SPECIAL_3.0_User_Flow_v1.1_Achievement_EQ.drawio",
+        "ETERNITY_SPECIAL_3.0_User_Flow_v1.1_README_FA.md",
+        "supplied Achievement/EQ protocol decisions"
+      ],
+      "journeyImpactCategory": "community-growth"
+    },
+    {
+      "product": "FanCommunity",
+      "achievementId": "fan-direct-30",
+      "eventType": "fan.direct.active-count.verified",
+      "milestone": {
+        "label": "30 active directs",
+        "threshold": 30,
+        "unit": "active direct"
+      },
+      "prerequisite": "verified eligible product event; integrity and anti-duplicate gate passed",
+      "qualificationRule": "verified active first-line member count reaches 30",
+      "eqDelta": 300,
+      "rewardEffect": "+300 personal EQ; non-EQ reward: UNRESOLVED — SOURCE REQUIRED",
+      "repeatability": "once-per-achievement-id",
+      "cap": 1,
+      "forwardOnly": true,
+      "referralEligibility": "eligible under global line-1 rule when direct is at or below sponsor level",
+      "referralEqAffectsPersonalLevelEq": false,
+      "evidence": [
+        "src/data/achievementProtocol.ts",
+        "ETERNITY_SPECIAL_3.0_User_Flow_v1.1_Achievement_EQ.drawio",
+        "ETERNITY_SPECIAL_3.0_User_Flow_v1.1_README_FA.md",
+        "supplied Achievement/EQ protocol decisions"
+      ],
+      "journeyImpactCategory": "community-growth"
+    },
+    {
+      "product": "FanCommunity",
+      "achievementId": "fan-direct-60",
+      "eventType": "fan.direct.active-count.verified",
+      "milestone": {
+        "label": "60 active directs",
+        "threshold": 60,
+        "unit": "active direct"
+      },
+      "prerequisite": "verified eligible product event; integrity and anti-duplicate gate passed",
+      "qualificationRule": "verified active first-line member count reaches 60",
+      "eqDelta": 600,
+      "rewardEffect": "+600 personal EQ; non-EQ reward: UNRESOLVED — SOURCE REQUIRED",
+      "repeatability": "once-per-achievement-id",
+      "cap": 1,
+      "forwardOnly": true,
+      "referralEligibility": "eligible under global line-1 rule when direct is at or below sponsor level",
+      "referralEqAffectsPersonalLevelEq": false,
+      "evidence": [
+        "src/data/achievementProtocol.ts",
+        "ETERNITY_SPECIAL_3.0_User_Flow_v1.1_Achievement_EQ.drawio",
+        "ETERNITY_SPECIAL_3.0_User_Flow_v1.1_README_FA.md",
+        "supplied Achievement/EQ protocol decisions"
+      ],
+      "journeyImpactCategory": "community-growth"
+    },
+    {
+      "product": "FanCommunity",
+      "achievementId": "fan-direct-100",
+      "eventType": "fan.direct.active-count.verified",
+      "milestone": {
+        "label": "100 active directs",
+        "threshold": 100,
+        "unit": "active direct"
+      },
+      "prerequisite": "verified eligible product event; integrity and anti-duplicate gate passed",
+      "qualificationRule": "verified active first-line member count reaches 100",
+      "eqDelta": 1000,
+      "rewardEffect": "+1000 personal EQ; non-EQ reward: UNRESOLVED — SOURCE REQUIRED",
+      "repeatability": "once-per-achievement-id",
+      "cap": 1,
+      "forwardOnly": true,
+      "referralEligibility": "eligible under global line-1 rule when direct is at or below sponsor level",
+      "referralEqAffectsPersonalLevelEq": false,
+      "evidence": [
+        "src/data/achievementProtocol.ts",
+        "ETERNITY_SPECIAL_3.0_User_Flow_v1.1_Achievement_EQ.drawio",
+        "ETERNITY_SPECIAL_3.0_User_Flow_v1.1_README_FA.md",
+        "supplied Achievement/EQ protocol decisions"
+      ],
+      "journeyImpactCategory": "community-growth"
+    },
+    {
+      "product": "FanCommunity",
+      "achievementId": "fan-prize-1",
+      "eventType": "fan.prize.qualified",
+      "milestone": {
+        "label": "1-star prize",
+        "threshold": 1,
+        "unit": "prize type index"
+      },
+      "prerequisite": "verified qualifying community prize event",
+      "qualificationRule": "qualifying 1-star prize is earned",
+      "eqDelta": 1000,
+      "rewardEffect": "+1000 personal EQ; non-EQ reward: UNRESOLVED — SOURCE REQUIRED",
+      "repeatability": "UNRESOLVED — SOURCE REQUIRED",
+      "cap": "UNRESOLVED — SOURCE REQUIRED",
+      "forwardOnly": true,
+      "referralEligibility": "eligible under global line-1 rule when direct is at or below sponsor level",
+      "referralEqAffectsPersonalLevelEq": false,
+      "evidence": [
+        "src/data/achievementProtocol.ts",
+        "ETERNITY_SPECIAL_3.0_User_Flow_v1.1_Achievement_EQ.drawio",
+        "ETERNITY_SPECIAL_3.0_User_Flow_v1.1_README_FA.md",
+        "supplied Achievement/EQ protocol decisions"
+      ],
+      "journeyImpactCategory": "community-prize"
+    },
+    {
+      "product": "FanCommunity",
+      "achievementId": "fan-prize-2",
+      "eventType": "fan.prize.qualified",
+      "milestone": {
+        "label": "2-star prize",
+        "threshold": 2,
+        "unit": "prize type index"
+      },
+      "prerequisite": "verified qualifying community prize event",
+      "qualificationRule": "qualifying 2-star prize is earned",
+      "eqDelta": 2000,
+      "rewardEffect": "+2000 personal EQ; non-EQ reward: UNRESOLVED — SOURCE REQUIRED",
+      "repeatability": "UNRESOLVED — SOURCE REQUIRED",
+      "cap": "UNRESOLVED — SOURCE REQUIRED",
+      "forwardOnly": true,
+      "referralEligibility": "eligible under global line-1 rule when direct is at or below sponsor level",
+      "referralEqAffectsPersonalLevelEq": false,
+      "evidence": [
+        "src/data/achievementProtocol.ts",
+        "ETERNITY_SPECIAL_3.0_User_Flow_v1.1_Achievement_EQ.drawio",
+        "ETERNITY_SPECIAL_3.0_User_Flow_v1.1_README_FA.md",
+        "supplied Achievement/EQ protocol decisions"
+      ],
+      "journeyImpactCategory": "community-prize"
+    },
+    {
+      "product": "FanCommunity",
+      "achievementId": "fan-prize-3",
+      "eventType": "fan.prize.qualified",
+      "milestone": {
+        "label": "3-star prize",
+        "threshold": 3,
+        "unit": "prize type index"
+      },
+      "prerequisite": "verified qualifying community prize event",
+      "qualificationRule": "qualifying 3-star prize is earned",
+      "eqDelta": 4000,
+      "rewardEffect": "+4000 personal EQ; non-EQ reward: UNRESOLVED — SOURCE REQUIRED",
+      "repeatability": "UNRESOLVED — SOURCE REQUIRED",
+      "cap": "UNRESOLVED — SOURCE REQUIRED",
+      "forwardOnly": true,
+      "referralEligibility": "eligible under global line-1 rule when direct is at or below sponsor level",
+      "referralEqAffectsPersonalLevelEq": false,
+      "evidence": [
+        "src/data/achievementProtocol.ts",
+        "ETERNITY_SPECIAL_3.0_User_Flow_v1.1_Achievement_EQ.drawio",
+        "ETERNITY_SPECIAL_3.0_User_Flow_v1.1_README_FA.md",
+        "supplied Achievement/EQ protocol decisions"
+      ],
+      "journeyImpactCategory": "community-prize"
+    },
+    {
+      "product": "FanCommunity",
+      "achievementId": "fan-prize-4",
+      "eventType": "fan.prize.qualified",
+      "milestone": {
+        "label": "4-star prize",
+        "threshold": 4,
+        "unit": "prize type index"
+      },
+      "prerequisite": "verified qualifying community prize event",
+      "qualificationRule": "qualifying 4-star prize is earned",
+      "eqDelta": 8000,
+      "rewardEffect": "+8000 personal EQ; non-EQ reward: UNRESOLVED — SOURCE REQUIRED",
+      "repeatability": "UNRESOLVED — SOURCE REQUIRED",
+      "cap": "UNRESOLVED — SOURCE REQUIRED",
+      "forwardOnly": true,
+      "referralEligibility": "eligible under global line-1 rule when direct is at or below sponsor level",
+      "referralEqAffectsPersonalLevelEq": false,
+      "evidence": [
+        "src/data/achievementProtocol.ts",
+        "ETERNITY_SPECIAL_3.0_User_Flow_v1.1_Achievement_EQ.drawio",
+        "ETERNITY_SPECIAL_3.0_User_Flow_v1.1_README_FA.md",
+        "supplied Achievement/EQ protocol decisions"
+      ],
+      "journeyImpactCategory": "community-prize"
+    },
+    {
+      "product": "FanCommunity",
+      "achievementId": "fan-prize-legend-star",
+      "eventType": "fan.prize.qualified",
+      "milestone": {
+        "label": "Starred Legend prize",
+        "threshold": 5,
+        "unit": "prize type index"
+      },
+      "prerequisite": "verified qualifying community prize event",
+      "qualificationRule": "qualifying Starred Legend prize is earned",
+      "eqDelta": 8000,
+      "rewardEffect": "+8000 personal EQ; non-EQ reward: UNRESOLVED — SOURCE REQUIRED",
+      "repeatability": "UNRESOLVED — SOURCE REQUIRED",
+      "cap": "UNRESOLVED — SOURCE REQUIRED",
+      "forwardOnly": true,
+      "referralEligibility": "eligible under global line-1 rule when direct is at or below sponsor level",
+      "referralEqAffectsPersonalLevelEq": false,
+      "evidence": [
+        "src/data/achievementProtocol.ts",
+        "ETERNITY_SPECIAL_3.0_User_Flow_v1.1_Achievement_EQ.drawio",
+        "ETERNITY_SPECIAL_3.0_User_Flow_v1.1_README_FA.md",
+        "supplied Achievement/EQ protocol decisions"
+      ],
+      "journeyImpactCategory": "community-prize"
+    },
+    {
+      "product": "FanCommunity",
+      "achievementId": "fan-prize-leg",
+      "eventType": "fan.prize.qualified",
+      "milestone": {
+        "label": "Leg prize",
+        "threshold": 6,
+        "unit": "prize type index"
+      },
+      "prerequisite": "verified qualifying community prize event",
+      "qualificationRule": "qualifying Leg prize is earned",
+      "eqDelta": 5000,
+      "rewardEffect": "+5000 personal EQ; non-EQ reward: UNRESOLVED — SOURCE REQUIRED",
+      "repeatability": "UNRESOLVED — SOURCE REQUIRED",
+      "cap": "UNRESOLVED — SOURCE REQUIRED",
+      "forwardOnly": true,
+      "referralEligibility": "eligible under global line-1 rule when direct is at or below sponsor level",
+      "referralEqAffectsPersonalLevelEq": false,
+      "evidence": [
+        "src/data/achievementProtocol.ts",
+        "ETERNITY_SPECIAL_3.0_User_Flow_v1.1_Achievement_EQ.drawio",
+        "ETERNITY_SPECIAL_3.0_User_Flow_v1.1_README_FA.md",
+        "supplied Achievement/EQ protocol decisions"
+      ],
+      "journeyImpactCategory": "community-prize"
+    },
+    {
+      "product": "Forecast",
+      "achievementId": "forecast-ticket-1",
+      "eventType": "forecast.ticket.indexed",
+      "milestone": {
+        "label": "1 eligible ticket",
+        "threshold": 1,
+        "unit": "ticket"
+      },
+      "prerequisite": "verified eligible product event; integrity and anti-duplicate gate passed",
+      "qualificationRule": "eligible cumulative ticket reaches 1",
+      "eqDelta": 10,
+      "rewardEffect": "+10 personal EQ; non-EQ reward: UNRESOLVED — SOURCE REQUIRED",
+      "repeatability": "once-per-achievement-id",
+      "cap": 1,
+      "forwardOnly": true,
+      "referralEligibility": "eligible under global line-1 rule when direct is at or below sponsor level",
+      "referralEqAffectsPersonalLevelEq": false,
+      "evidence": [
+        "src/data/achievementProtocol.ts",
+        "ETERNITY_SPECIAL_3.0_User_Flow_v1.1_Achievement_EQ.drawio",
+        "ETERNITY_SPECIAL_3.0_User_Flow_v1.1_README_FA.md",
+        "supplied Achievement/EQ protocol decisions"
+      ],
+      "journeyImpactCategory": "prediction-participation"
+    },
+    {
+      "product": "Forecast",
+      "achievementId": "forecast-ticket-3",
+      "eventType": "forecast.ticket.indexed",
+      "milestone": {
+        "label": "3 eligible tickets",
+        "threshold": 3,
+        "unit": "ticket"
+      },
+      "prerequisite": "verified eligible product event; integrity and anti-duplicate gate passed",
+      "qualificationRule": "eligible cumulative ticket reaches 3",
+      "eqDelta": 30,
+      "rewardEffect": "+30 personal EQ; non-EQ reward: UNRESOLVED — SOURCE REQUIRED",
+      "repeatability": "once-per-achievement-id",
+      "cap": 1,
+      "forwardOnly": true,
+      "referralEligibility": "eligible under global line-1 rule when direct is at or below sponsor level",
+      "referralEqAffectsPersonalLevelEq": false,
+      "evidence": [
+        "src/data/achievementProtocol.ts",
+        "ETERNITY_SPECIAL_3.0_User_Flow_v1.1_Achievement_EQ.drawio",
+        "ETERNITY_SPECIAL_3.0_User_Flow_v1.1_README_FA.md",
+        "supplied Achievement/EQ protocol decisions"
+      ],
+      "journeyImpactCategory": "prediction-participation"
+    },
+    {
+      "product": "Forecast",
+      "achievementId": "forecast-ticket-5",
+      "eventType": "forecast.ticket.indexed",
+      "milestone": {
+        "label": "5 eligible tickets",
+        "threshold": 5,
+        "unit": "ticket"
+      },
+      "prerequisite": "verified eligible product event; integrity and anti-duplicate gate passed",
+      "qualificationRule": "eligible cumulative ticket reaches 5",
+      "eqDelta": 50,
+      "rewardEffect": "+50 personal EQ; non-EQ reward: UNRESOLVED — SOURCE REQUIRED",
+      "repeatability": "once-per-achievement-id",
+      "cap": 1,
+      "forwardOnly": true,
+      "referralEligibility": "eligible under global line-1 rule when direct is at or below sponsor level",
+      "referralEqAffectsPersonalLevelEq": false,
+      "evidence": [
+        "src/data/achievementProtocol.ts",
+        "ETERNITY_SPECIAL_3.0_User_Flow_v1.1_Achievement_EQ.drawio",
+        "ETERNITY_SPECIAL_3.0_User_Flow_v1.1_README_FA.md",
+        "supplied Achievement/EQ protocol decisions"
+      ],
+      "journeyImpactCategory": "prediction-participation"
+    },
+    {
+      "product": "Forecast",
+      "achievementId": "forecast-ticket-10",
+      "eventType": "forecast.ticket.indexed",
+      "milestone": {
+        "label": "10 eligible tickets",
+        "threshold": 10,
+        "unit": "ticket"
+      },
+      "prerequisite": "verified eligible product event; integrity and anti-duplicate gate passed",
+      "qualificationRule": "eligible cumulative ticket reaches 10",
+      "eqDelta": 100,
+      "rewardEffect": "+100 personal EQ; non-EQ reward: UNRESOLVED — SOURCE REQUIRED",
+      "repeatability": "once-per-achievement-id",
+      "cap": 1,
+      "forwardOnly": true,
+      "referralEligibility": "eligible under global line-1 rule when direct is at or below sponsor level",
+      "referralEqAffectsPersonalLevelEq": false,
+      "evidence": [
+        "src/data/achievementProtocol.ts",
+        "ETERNITY_SPECIAL_3.0_User_Flow_v1.1_Achievement_EQ.drawio",
+        "ETERNITY_SPECIAL_3.0_User_Flow_v1.1_README_FA.md",
+        "supplied Achievement/EQ protocol decisions"
+      ],
+      "journeyImpactCategory": "prediction-participation"
+    },
+    {
+      "product": "Forecast",
+      "achievementId": "forecast-ticket-50",
+      "eventType": "forecast.ticket.indexed",
+      "milestone": {
+        "label": "50 eligible tickets",
+        "threshold": 50,
+        "unit": "ticket"
+      },
+      "prerequisite": "verified eligible product event; integrity and anti-duplicate gate passed",
+      "qualificationRule": "eligible cumulative ticket reaches 50",
+      "eqDelta": 500,
+      "rewardEffect": "+500 personal EQ; non-EQ reward: UNRESOLVED — SOURCE REQUIRED",
+      "repeatability": "once-per-achievement-id",
+      "cap": 1,
+      "forwardOnly": true,
+      "referralEligibility": "eligible under global line-1 rule when direct is at or below sponsor level",
+      "referralEqAffectsPersonalLevelEq": false,
+      "evidence": [
+        "src/data/achievementProtocol.ts",
+        "ETERNITY_SPECIAL_3.0_User_Flow_v1.1_Achievement_EQ.drawio",
+        "ETERNITY_SPECIAL_3.0_User_Flow_v1.1_README_FA.md",
+        "supplied Achievement/EQ protocol decisions"
+      ],
+      "journeyImpactCategory": "prediction-participation"
+    },
+    {
+      "product": "Forecast",
+      "achievementId": "forecast-ticket-100",
+      "eventType": "forecast.ticket.indexed",
+      "milestone": {
+        "label": "100 eligible tickets",
+        "threshold": 100,
+        "unit": "ticket"
+      },
+      "prerequisite": "verified eligible product event; integrity and anti-duplicate gate passed",
+      "qualificationRule": "eligible cumulative ticket reaches 100",
+      "eqDelta": 1000,
+      "rewardEffect": "+1000 personal EQ; non-EQ reward: UNRESOLVED — SOURCE REQUIRED",
+      "repeatability": "once-per-achievement-id",
+      "cap": 1,
+      "forwardOnly": true,
+      "referralEligibility": "eligible under global line-1 rule when direct is at or below sponsor level",
+      "referralEqAffectsPersonalLevelEq": false,
+      "evidence": [
+        "src/data/achievementProtocol.ts",
+        "ETERNITY_SPECIAL_3.0_User_Flow_v1.1_Achievement_EQ.drawio",
+        "ETERNITY_SPECIAL_3.0_User_Flow_v1.1_README_FA.md",
+        "supplied Achievement/EQ protocol decisions"
+      ],
+      "journeyImpactCategory": "prediction-participation"
+    },
+    {
+      "product": "Forecast",
+      "achievementId": "forecast-week-1",
+      "eventType": "forecast.week.qualified",
+      "milestone": {
+        "label": "1 active week",
+        "threshold": 1,
+        "unit": "qualified week"
+      },
+      "prerequisite": "verified eligible product event; integrity and anti-duplicate gate passed",
+      "qualificationRule": "count of weeks with at least one eligible Forecast entry reaches 1",
+      "eqDelta": 20,
+      "rewardEffect": "+20 personal EQ; non-EQ reward: UNRESOLVED — SOURCE REQUIRED",
+      "repeatability": "once-per-achievement-id",
+      "cap": 1,
+      "forwardOnly": true,
+      "referralEligibility": "eligible under global line-1 rule when direct is at or below sponsor level",
+      "referralEqAffectsPersonalLevelEq": false,
+      "evidence": [
+        "src/data/achievementProtocol.ts",
+        "ETERNITY_SPECIAL_3.0_User_Flow_v1.1_Achievement_EQ.drawio",
+        "ETERNITY_SPECIAL_3.0_User_Flow_v1.1_README_FA.md",
+        "supplied Achievement/EQ protocol decisions"
+      ],
+      "journeyImpactCategory": "prediction-consistency"
+    },
+    {
+      "product": "Forecast",
+      "achievementId": "forecast-week-3",
+      "eventType": "forecast.week.qualified",
+      "milestone": {
+        "label": "3 active weeks",
+        "threshold": 3,
+        "unit": "qualified week"
+      },
+      "prerequisite": "verified eligible product event; integrity and anti-duplicate gate passed",
+      "qualificationRule": "count of weeks with at least one eligible Forecast entry reaches 3",
+      "eqDelta": 60,
+      "rewardEffect": "+60 personal EQ; non-EQ reward: UNRESOLVED — SOURCE REQUIRED",
+      "repeatability": "once-per-achievement-id",
+      "cap": 1,
+      "forwardOnly": true,
+      "referralEligibility": "eligible under global line-1 rule when direct is at or below sponsor level",
+      "referralEqAffectsPersonalLevelEq": false,
+      "evidence": [
+        "src/data/achievementProtocol.ts",
+        "ETERNITY_SPECIAL_3.0_User_Flow_v1.1_Achievement_EQ.drawio",
+        "ETERNITY_SPECIAL_3.0_User_Flow_v1.1_README_FA.md",
+        "supplied Achievement/EQ protocol decisions"
+      ],
+      "journeyImpactCategory": "prediction-consistency"
+    },
+    {
+      "product": "Forecast",
+      "achievementId": "forecast-week-10",
+      "eventType": "forecast.week.qualified",
+      "milestone": {
+        "label": "10 active weeks",
+        "threshold": 10,
+        "unit": "qualified week"
+      },
+      "prerequisite": "verified eligible product event; integrity and anti-duplicate gate passed",
+      "qualificationRule": "count of weeks with at least one eligible Forecast entry reaches 10",
+      "eqDelta": 200,
+      "rewardEffect": "+200 personal EQ; non-EQ reward: UNRESOLVED — SOURCE REQUIRED",
+      "repeatability": "once-per-achievement-id",
+      "cap": 1,
+      "forwardOnly": true,
+      "referralEligibility": "eligible under global line-1 rule when direct is at or below sponsor level",
+      "referralEqAffectsPersonalLevelEq": false,
+      "evidence": [
+        "src/data/achievementProtocol.ts",
+        "ETERNITY_SPECIAL_3.0_User_Flow_v1.1_Achievement_EQ.drawio",
+        "ETERNITY_SPECIAL_3.0_User_Flow_v1.1_README_FA.md",
+        "supplied Achievement/EQ protocol decisions"
+      ],
+      "journeyImpactCategory": "prediction-consistency"
+    },
+    {
+      "product": "Forecast",
+      "achievementId": "forecast-week-20",
+      "eventType": "forecast.week.qualified",
+      "milestone": {
+        "label": "20 active weeks",
+        "threshold": 20,
+        "unit": "qualified week"
+      },
+      "prerequisite": "verified eligible product event; integrity and anti-duplicate gate passed",
+      "qualificationRule": "count of weeks with at least one eligible Forecast entry reaches 20",
+      "eqDelta": 400,
+      "rewardEffect": "+400 personal EQ; non-EQ reward: UNRESOLVED — SOURCE REQUIRED",
+      "repeatability": "once-per-achievement-id",
+      "cap": 1,
+      "forwardOnly": true,
+      "referralEligibility": "eligible under global line-1 rule when direct is at or below sponsor level",
+      "referralEqAffectsPersonalLevelEq": false,
+      "evidence": [
+        "src/data/achievementProtocol.ts",
+        "ETERNITY_SPECIAL_3.0_User_Flow_v1.1_Achievement_EQ.drawio",
+        "ETERNITY_SPECIAL_3.0_User_Flow_v1.1_README_FA.md",
+        "supplied Achievement/EQ protocol decisions"
+      ],
+      "journeyImpactCategory": "prediction-consistency"
+    },
+    {
+      "product": "Forecast",
+      "achievementId": "forecast-week-30",
+      "eventType": "forecast.week.qualified",
+      "milestone": {
+        "label": "30 active weeks",
+        "threshold": 30,
+        "unit": "qualified week"
+      },
+      "prerequisite": "verified eligible product event; integrity and anti-duplicate gate passed",
+      "qualificationRule": "count of weeks with at least one eligible Forecast entry reaches 30",
+      "eqDelta": 600,
+      "rewardEffect": "+600 personal EQ; non-EQ reward: UNRESOLVED — SOURCE REQUIRED",
+      "repeatability": "once-per-achievement-id",
+      "cap": 1,
+      "forwardOnly": true,
+      "referralEligibility": "eligible under global line-1 rule when direct is at or below sponsor level",
+      "referralEqAffectsPersonalLevelEq": false,
+      "evidence": [
+        "src/data/achievementProtocol.ts",
+        "ETERNITY_SPECIAL_3.0_User_Flow_v1.1_Achievement_EQ.drawio",
+        "ETERNITY_SPECIAL_3.0_User_Flow_v1.1_README_FA.md",
+        "supplied Achievement/EQ protocol decisions"
+      ],
+      "journeyImpactCategory": "prediction-consistency"
+    },
+    {
+      "product": "Forecast",
+      "achievementId": "forecast-week-40",
+      "eventType": "forecast.week.qualified",
+      "milestone": {
+        "label": "40 active weeks",
+        "threshold": 40,
+        "unit": "qualified week"
+      },
+      "prerequisite": "verified eligible product event; integrity and anti-duplicate gate passed",
+      "qualificationRule": "count of weeks with at least one eligible Forecast entry reaches 40",
+      "eqDelta": 800,
+      "rewardEffect": "+800 personal EQ; non-EQ reward: UNRESOLVED — SOURCE REQUIRED",
+      "repeatability": "once-per-achievement-id",
+      "cap": 1,
+      "forwardOnly": true,
+      "referralEligibility": "eligible under global line-1 rule when direct is at or below sponsor level",
+      "referralEqAffectsPersonalLevelEq": false,
+      "evidence": [
+        "src/data/achievementProtocol.ts",
+        "ETERNITY_SPECIAL_3.0_User_Flow_v1.1_Achievement_EQ.drawio",
+        "ETERNITY_SPECIAL_3.0_User_Flow_v1.1_README_FA.md",
+        "supplied Achievement/EQ protocol decisions"
+      ],
+      "journeyImpactCategory": "prediction-consistency"
+    },
+    {
+      "product": "Forecast",
+      "achievementId": "forecast-week-50",
+      "eventType": "forecast.week.qualified",
+      "milestone": {
+        "label": "50 active weeks",
+        "threshold": 50,
+        "unit": "qualified week"
+      },
+      "prerequisite": "verified eligible product event; integrity and anti-duplicate gate passed",
+      "qualificationRule": "count of weeks with at least one eligible Forecast entry reaches 50",
+      "eqDelta": 1000,
+      "rewardEffect": "+1000 personal EQ; non-EQ reward: UNRESOLVED — SOURCE REQUIRED",
+      "repeatability": "once-per-achievement-id",
+      "cap": 1,
+      "forwardOnly": true,
+      "referralEligibility": "eligible under global line-1 rule when direct is at or below sponsor level",
+      "referralEqAffectsPersonalLevelEq": false,
+      "evidence": [
+        "src/data/achievementProtocol.ts",
+        "ETERNITY_SPECIAL_3.0_User_Flow_v1.1_Achievement_EQ.drawio",
+        "ETERNITY_SPECIAL_3.0_User_Flow_v1.1_README_FA.md",
+        "supplied Achievement/EQ protocol decisions"
+      ],
+      "journeyImpactCategory": "prediction-consistency"
+    },
+    {
+      "product": "Forecast",
+      "achievementId": "forecast-contributor-1",
+      "eventType": "forecast.contributor.qualified",
+      "milestone": {
+        "label": "1 contributor qualification",
+        "threshold": 1,
+        "unit": "qualification"
+      },
+      "prerequisite": "verified eligible product event; integrity and anti-duplicate gate passed",
+      "qualificationRule": "eligible cumulative qualification reaches 1",
+      "eqDelta": 200,
+      "rewardEffect": "+200 personal EQ; non-EQ reward: UNRESOLVED — SOURCE REQUIRED",
+      "repeatability": "once-per-achievement-id",
+      "cap": 1,
+      "forwardOnly": true,
+      "referralEligibility": "eligible under global line-1 rule when direct is at or below sponsor level",
+      "referralEqAffectsPersonalLevelEq": false,
+      "evidence": [
+        "src/data/achievementProtocol.ts",
+        "ETERNITY_SPECIAL_3.0_User_Flow_v1.1_Achievement_EQ.drawio",
+        "ETERNITY_SPECIAL_3.0_User_Flow_v1.1_README_FA.md",
+        "supplied Achievement/EQ protocol decisions"
+      ],
+      "journeyImpactCategory": "prediction-skill"
+    },
+    {
+      "product": "Forecast",
+      "achievementId": "forecast-contributor-3",
+      "eventType": "forecast.contributor.qualified",
+      "milestone": {
+        "label": "3 contributor qualifications",
+        "threshold": 3,
+        "unit": "qualification"
+      },
+      "prerequisite": "verified eligible product event; integrity and anti-duplicate gate passed",
+      "qualificationRule": "eligible cumulative qualification reaches 3",
+      "eqDelta": 600,
+      "rewardEffect": "+600 personal EQ; non-EQ reward: UNRESOLVED — SOURCE REQUIRED",
+      "repeatability": "once-per-achievement-id",
+      "cap": 1,
+      "forwardOnly": true,
+      "referralEligibility": "eligible under global line-1 rule when direct is at or below sponsor level",
+      "referralEqAffectsPersonalLevelEq": false,
+      "evidence": [
+        "src/data/achievementProtocol.ts",
+        "ETERNITY_SPECIAL_3.0_User_Flow_v1.1_Achievement_EQ.drawio",
+        "ETERNITY_SPECIAL_3.0_User_Flow_v1.1_README_FA.md",
+        "supplied Achievement/EQ protocol decisions"
+      ],
+      "journeyImpactCategory": "prediction-skill"
+    },
+    {
+      "product": "Forecast",
+      "achievementId": "forecast-contributor-5",
+      "eventType": "forecast.contributor.qualified",
+      "milestone": {
+        "label": "5 contributor qualifications",
+        "threshold": 5,
+        "unit": "qualification"
+      },
+      "prerequisite": "verified eligible product event; integrity and anti-duplicate gate passed",
+      "qualificationRule": "eligible cumulative qualification reaches 5",
+      "eqDelta": 1000,
+      "rewardEffect": "+1000 personal EQ; non-EQ reward: UNRESOLVED — SOURCE REQUIRED",
+      "repeatability": "once-per-achievement-id",
+      "cap": 1,
+      "forwardOnly": true,
+      "referralEligibility": "eligible under global line-1 rule when direct is at or below sponsor level",
+      "referralEqAffectsPersonalLevelEq": false,
+      "evidence": [
+        "src/data/achievementProtocol.ts",
+        "ETERNITY_SPECIAL_3.0_User_Flow_v1.1_Achievement_EQ.drawio",
+        "ETERNITY_SPECIAL_3.0_User_Flow_v1.1_README_FA.md",
+        "supplied Achievement/EQ protocol decisions"
+      ],
+      "journeyImpactCategory": "prediction-skill"
+    },
+    {
+      "product": "Forecast",
+      "achievementId": "forecast-contributor-10",
+      "eventType": "forecast.contributor.qualified",
+      "milestone": {
+        "label": "10 contributor qualifications",
+        "threshold": 10,
+        "unit": "qualification"
+      },
+      "prerequisite": "verified eligible product event; integrity and anti-duplicate gate passed",
+      "qualificationRule": "eligible cumulative qualification reaches 10",
+      "eqDelta": 2000,
+      "rewardEffect": "+2000 personal EQ; non-EQ reward: UNRESOLVED — SOURCE REQUIRED",
+      "repeatability": "once-per-achievement-id",
+      "cap": 1,
+      "forwardOnly": true,
+      "referralEligibility": "eligible under global line-1 rule when direct is at or below sponsor level",
+      "referralEqAffectsPersonalLevelEq": false,
+      "evidence": [
+        "src/data/achievementProtocol.ts",
+        "ETERNITY_SPECIAL_3.0_User_Flow_v1.1_Achievement_EQ.drawio",
+        "ETERNITY_SPECIAL_3.0_User_Flow_v1.1_README_FA.md",
+        "supplied Achievement/EQ protocol decisions"
+      ],
+      "journeyImpactCategory": "prediction-skill"
+    },
+    {
+      "product": "Forecast",
+      "achievementId": "forecast-contributor-20",
+      "eventType": "forecast.contributor.qualified",
+      "milestone": {
+        "label": "20 contributor qualifications",
+        "threshold": 20,
+        "unit": "qualification"
+      },
+      "prerequisite": "verified eligible product event; integrity and anti-duplicate gate passed",
+      "qualificationRule": "eligible cumulative qualification reaches 20",
+      "eqDelta": 4000,
+      "rewardEffect": "+4000 personal EQ; non-EQ reward: UNRESOLVED — SOURCE REQUIRED",
+      "repeatability": "once-per-achievement-id",
+      "cap": 1,
+      "forwardOnly": true,
+      "referralEligibility": "eligible under global line-1 rule when direct is at or below sponsor level",
+      "referralEqAffectsPersonalLevelEq": false,
+      "evidence": [
+        "src/data/achievementProtocol.ts",
+        "ETERNITY_SPECIAL_3.0_User_Flow_v1.1_Achievement_EQ.drawio",
+        "ETERNITY_SPECIAL_3.0_User_Flow_v1.1_README_FA.md",
+        "supplied Achievement/EQ protocol decisions"
+      ],
+      "journeyImpactCategory": "prediction-skill"
+    },
+    {
+      "product": "Forecast",
+      "achievementId": "forecast-contributor-30",
+      "eventType": "forecast.contributor.qualified",
+      "milestone": {
+        "label": "30 contributor qualifications",
+        "threshold": 30,
+        "unit": "qualification"
+      },
+      "prerequisite": "verified eligible product event; integrity and anti-duplicate gate passed",
+      "qualificationRule": "eligible cumulative qualification reaches 30",
+      "eqDelta": 6000,
+      "rewardEffect": "+6000 personal EQ; non-EQ reward: UNRESOLVED — SOURCE REQUIRED",
+      "repeatability": "once-per-achievement-id",
+      "cap": 1,
+      "forwardOnly": true,
+      "referralEligibility": "eligible under global line-1 rule when direct is at or below sponsor level",
+      "referralEqAffectsPersonalLevelEq": false,
+      "evidence": [
+        "src/data/achievementProtocol.ts",
+        "ETERNITY_SPECIAL_3.0_User_Flow_v1.1_Achievement_EQ.drawio",
+        "ETERNITY_SPECIAL_3.0_User_Flow_v1.1_README_FA.md",
+        "supplied Achievement/EQ protocol decisions"
+      ],
+      "journeyImpactCategory": "prediction-skill"
+    },
+    {
+      "product": "Forecast",
+      "achievementId": "forecast-contributor-40",
+      "eventType": "forecast.contributor.qualified",
+      "milestone": {
+        "label": "40 contributor qualifications",
+        "threshold": 40,
+        "unit": "qualification"
+      },
+      "prerequisite": "verified eligible product event; integrity and anti-duplicate gate passed",
+      "qualificationRule": "eligible cumulative qualification reaches 40",
+      "eqDelta": 8000,
+      "rewardEffect": "+8000 personal EQ; non-EQ reward: UNRESOLVED — SOURCE REQUIRED",
+      "repeatability": "once-per-achievement-id",
+      "cap": 1,
+      "forwardOnly": true,
+      "referralEligibility": "eligible under global line-1 rule when direct is at or below sponsor level",
+      "referralEqAffectsPersonalLevelEq": false,
+      "evidence": [
+        "src/data/achievementProtocol.ts",
+        "ETERNITY_SPECIAL_3.0_User_Flow_v1.1_Achievement_EQ.drawio",
+        "ETERNITY_SPECIAL_3.0_User_Flow_v1.1_README_FA.md",
+        "supplied Achievement/EQ protocol decisions"
+      ],
+      "journeyImpactCategory": "prediction-skill"
+    },
+    {
+      "product": "Forecast",
+      "achievementId": "forecast-savior",
+      "eventType": "forecast.prize.qualified",
+      "milestone": {
+        "label": "Savior",
+        "threshold": 1,
+        "unit": "prize type index"
+      },
+      "prerequisite": "verified qualifying Forecast prize event",
+      "qualificationRule": "qualifying Savior outcome is earned",
+      "eqDelta": 2000,
+      "rewardEffect": "+2000 personal EQ; non-EQ reward: UNRESOLVED — SOURCE REQUIRED",
+      "repeatability": "UNRESOLVED — SOURCE REQUIRED",
+      "cap": "UNRESOLVED — SOURCE REQUIRED",
+      "forwardOnly": true,
+      "referralEligibility": "eligible under global line-1 rule when direct is at or below sponsor level",
+      "referralEqAffectsPersonalLevelEq": false,
+      "evidence": [
+        "src/data/achievementProtocol.ts",
+        "ETERNITY_SPECIAL_3.0_User_Flow_v1.1_Achievement_EQ.drawio",
+        "ETERNITY_SPECIAL_3.0_User_Flow_v1.1_README_FA.md",
+        "supplied Achievement/EQ protocol decisions"
+      ],
+      "journeyImpactCategory": "prediction-prize"
+    },
+    {
+      "product": "Forecast",
+      "achievementId": "forecast-savior-star",
+      "eventType": "forecast.prize.qualified",
+      "milestone": {
+        "label": "Starred Savior",
+        "threshold": 2,
+        "unit": "prize type index"
+      },
+      "prerequisite": "verified qualifying Forecast prize event",
+      "qualificationRule": "qualifying Starred Savior outcome is earned",
+      "eqDelta": 5000,
+      "rewardEffect": "+5000 personal EQ; non-EQ reward: UNRESOLVED — SOURCE REQUIRED",
+      "repeatability": "UNRESOLVED — SOURCE REQUIRED",
+      "cap": "UNRESOLVED — SOURCE REQUIRED",
+      "forwardOnly": true,
+      "referralEligibility": "eligible under global line-1 rule when direct is at or below sponsor level",
+      "referralEqAffectsPersonalLevelEq": false,
+      "evidence": [
+        "src/data/achievementProtocol.ts",
+        "ETERNITY_SPECIAL_3.0_User_Flow_v1.1_Achievement_EQ.drawio",
+        "ETERNITY_SPECIAL_3.0_User_Flow_v1.1_README_FA.md",
+        "supplied Achievement/EQ protocol decisions"
+      ],
+      "journeyImpactCategory": "prediction-prize"
+    },
+    {
+      "product": "Forecast",
+      "achievementId": "forecast-stock-provider",
+      "eventType": "forecast.stock-provider.share-qualified",
+      "milestone": {
+        "label": "Per qualifying provider share",
+        "threshold": 1,
+        "unit": "provider share"
+      },
+      "prerequisite": "verified eligible product event; integrity and anti-duplicate gate passed",
+      "qualificationRule": "each verified qualifying provider share",
+      "eqDelta": 2000,
+      "rewardEffect": "+2000 personal EQ; non-EQ reward: UNRESOLVED — SOURCE REQUIRED",
+      "repeatability": "per verified qualifying share",
+      "cap": "UNRESOLVED — SOURCE REQUIRED",
+      "forwardOnly": true,
+      "referralEligibility": "eligible under global line-1 rule when direct is at or below sponsor level",
+      "referralEqAffectsPersonalLevelEq": false,
+      "evidence": [
+        "src/data/achievementProtocol.ts",
+        "ETERNITY_SPECIAL_3.0_User_Flow_v1.1_Achievement_EQ.drawio",
+        "ETERNITY_SPECIAL_3.0_User_Flow_v1.1_README_FA.md",
+        "supplied Achievement/EQ protocol decisions"
+      ],
+      "journeyImpactCategory": "prediction-provider"
+    },
+    {
+      "product": "SHIELD",
+      "achievementId": "shield-100-1",
+      "eventType": "shield.policy.fully-paid-count.verified",
+      "milestone": {
+        "label": "1 fully paid $100 policy",
+        "threshold": 1,
+        "unit": "fully paid policy"
+      },
+      "prerequisite": "verified fully paid SHIELD in the $100 group",
+      "qualificationRule": "verified fully paid policy count in $100 group reaches 1",
+      "eqDelta": 200,
+      "rewardEffect": "+200 personal EQ; non-EQ reward: UNRESOLVED — SOURCE REQUIRED",
+      "repeatability": "once-per-achievement-id",
+      "cap": 1,
+      "forwardOnly": true,
+      "referralEligibility": "eligible under global line-1 rule when direct is at or below sponsor level",
+      "referralEqAffectsPersonalLevelEq": false,
+      "evidence": [
+        "src/data/achievementProtocol.ts",
+        "ETERNITY_SPECIAL_3.0_User_Flow_v1.1_Achievement_EQ.drawio",
+        "ETERNITY_SPECIAL_3.0_User_Flow_v1.1_README_FA.md",
+        "supplied Achievement/EQ protocol decisions"
+      ],
+      "journeyImpactCategory": "protection-commitment"
+    },
+    {
+      "product": "SHIELD",
+      "achievementId": "shield-100-5",
+      "eventType": "shield.policy.fully-paid-count.verified",
+      "milestone": {
+        "label": "5 fully paid $100 policies",
+        "threshold": 5,
+        "unit": "fully paid policy"
+      },
+      "prerequisite": "verified fully paid SHIELD in the $100 group",
+      "qualificationRule": "verified fully paid policy count in $100 group reaches 5",
+      "eqDelta": 1000,
+      "rewardEffect": "+1000 personal EQ; non-EQ reward: UNRESOLVED — SOURCE REQUIRED",
+      "repeatability": "once-per-achievement-id",
+      "cap": 1,
+      "forwardOnly": true,
+      "referralEligibility": "eligible under global line-1 rule when direct is at or below sponsor level",
+      "referralEqAffectsPersonalLevelEq": false,
+      "evidence": [
+        "src/data/achievementProtocol.ts",
+        "ETERNITY_SPECIAL_3.0_User_Flow_v1.1_Achievement_EQ.drawio",
+        "ETERNITY_SPECIAL_3.0_User_Flow_v1.1_README_FA.md",
+        "supplied Achievement/EQ protocol decisions"
+      ],
+      "journeyImpactCategory": "protection-commitment"
+    },
+    {
+      "product": "SHIELD",
+      "achievementId": "shield-100-20",
+      "eventType": "shield.policy.fully-paid-count.verified",
+      "milestone": {
+        "label": "20 fully paid $100 policies",
+        "threshold": 20,
+        "unit": "fully paid policy"
+      },
+      "prerequisite": "verified fully paid SHIELD in the $100 group",
+      "qualificationRule": "verified fully paid policy count in $100 group reaches 20",
+      "eqDelta": 4000,
+      "rewardEffect": "+4000 personal EQ; non-EQ reward: UNRESOLVED — SOURCE REQUIRED",
+      "repeatability": "once-per-achievement-id",
+      "cap": 1,
+      "forwardOnly": true,
+      "referralEligibility": "eligible under global line-1 rule when direct is at or below sponsor level",
+      "referralEqAffectsPersonalLevelEq": false,
+      "evidence": [
+        "src/data/achievementProtocol.ts",
+        "ETERNITY_SPECIAL_3.0_User_Flow_v1.1_Achievement_EQ.drawio",
+        "ETERNITY_SPECIAL_3.0_User_Flow_v1.1_README_FA.md",
+        "supplied Achievement/EQ protocol decisions"
+      ],
+      "journeyImpactCategory": "protection-commitment"
+    },
+    {
+      "product": "SHIELD",
+      "achievementId": "shield-100-40",
+      "eventType": "shield.policy.fully-paid-count.verified",
+      "milestone": {
+        "label": "40 fully paid $100 policies",
+        "threshold": 40,
+        "unit": "fully paid policy"
+      },
+      "prerequisite": "verified fully paid SHIELD in the $100 group",
+      "qualificationRule": "verified fully paid policy count in $100 group reaches 40",
+      "eqDelta": 8000,
+      "rewardEffect": "+8000 personal EQ; non-EQ reward: UNRESOLVED — SOURCE REQUIRED",
+      "repeatability": "once-per-achievement-id",
+      "cap": 1,
+      "forwardOnly": true,
+      "referralEligibility": "eligible under global line-1 rule when direct is at or below sponsor level",
+      "referralEqAffectsPersonalLevelEq": false,
+      "evidence": [
+        "src/data/achievementProtocol.ts",
+        "ETERNITY_SPECIAL_3.0_User_Flow_v1.1_Achievement_EQ.drawio",
+        "ETERNITY_SPECIAL_3.0_User_Flow_v1.1_README_FA.md",
+        "supplied Achievement/EQ protocol decisions"
+      ],
+      "journeyImpactCategory": "protection-commitment"
+    },
+    {
+      "product": "SHIELD",
+      "achievementId": "shield-1000-1",
+      "eventType": "shield.policy.fully-paid-count.verified",
+      "milestone": {
+        "label": "1 fully paid $1,000 policy",
+        "threshold": 1,
+        "unit": "fully paid policy"
+      },
+      "prerequisite": "verified fully paid SHIELD in the $1,000 group",
+      "qualificationRule": "verified fully paid policy count in $1,000 group reaches 1",
+      "eqDelta": 2000,
+      "rewardEffect": "+2000 personal EQ; non-EQ reward: UNRESOLVED — SOURCE REQUIRED",
+      "repeatability": "once-per-achievement-id",
+      "cap": 1,
+      "forwardOnly": true,
+      "referralEligibility": "eligible under global line-1 rule when direct is at or below sponsor level",
+      "referralEqAffectsPersonalLevelEq": false,
+      "evidence": [
+        "src/data/achievementProtocol.ts",
+        "ETERNITY_SPECIAL_3.0_User_Flow_v1.1_Achievement_EQ.drawio",
+        "ETERNITY_SPECIAL_3.0_User_Flow_v1.1_README_FA.md",
+        "supplied Achievement/EQ protocol decisions"
+      ],
+      "journeyImpactCategory": "protection-commitment"
+    },
+    {
+      "product": "SHIELD",
+      "achievementId": "shield-1000-5",
+      "eventType": "shield.policy.fully-paid-count.verified",
+      "milestone": {
+        "label": "5 fully paid $1,000 policies",
+        "threshold": 5,
+        "unit": "fully paid policy"
+      },
+      "prerequisite": "verified fully paid SHIELD in the $1,000 group",
+      "qualificationRule": "verified fully paid policy count in $1,000 group reaches 5",
+      "eqDelta": 10000,
+      "rewardEffect": "+10000 personal EQ; non-EQ reward: UNRESOLVED — SOURCE REQUIRED",
+      "repeatability": "once-per-achievement-id",
+      "cap": 1,
+      "forwardOnly": true,
+      "referralEligibility": "eligible under global line-1 rule when direct is at or below sponsor level",
+      "referralEqAffectsPersonalLevelEq": false,
+      "evidence": [
+        "src/data/achievementProtocol.ts",
+        "ETERNITY_SPECIAL_3.0_User_Flow_v1.1_Achievement_EQ.drawio",
+        "ETERNITY_SPECIAL_3.0_User_Flow_v1.1_README_FA.md",
+        "supplied Achievement/EQ protocol decisions"
+      ],
+      "journeyImpactCategory": "protection-commitment"
+    },
+    {
+      "product": "SHIELD",
+      "achievementId": "shield-1000-10",
+      "eventType": "shield.policy.fully-paid-count.verified",
+      "milestone": {
+        "label": "10 fully paid $1,000 policies",
+        "threshold": 10,
+        "unit": "fully paid policy"
+      },
+      "prerequisite": "verified fully paid SHIELD in the $1,000 group",
+      "qualificationRule": "verified fully paid policy count in $1,000 group reaches 10",
+      "eqDelta": 40000,
+      "rewardEffect": "+40000 personal EQ; non-EQ reward: UNRESOLVED — SOURCE REQUIRED",
+      "repeatability": "once-per-achievement-id",
+      "cap": 1,
+      "forwardOnly": true,
+      "referralEligibility": "eligible under global line-1 rule when direct is at or below sponsor level",
+      "referralEqAffectsPersonalLevelEq": false,
+      "evidence": [
+        "src/data/achievementProtocol.ts",
+        "ETERNITY_SPECIAL_3.0_User_Flow_v1.1_Achievement_EQ.drawio",
+        "ETERNITY_SPECIAL_3.0_User_Flow_v1.1_README_FA.md",
+        "supplied Achievement/EQ protocol decisions"
+      ],
+      "journeyImpactCategory": "protection-commitment"
+    },
+    {
+      "product": "SHIELD",
+      "achievementId": "shield-1000-20",
+      "eventType": "shield.policy.fully-paid-count.verified",
+      "milestone": {
+        "label": "20 fully paid $1,000 policies",
+        "threshold": 20,
+        "unit": "fully paid policy"
+      },
+      "prerequisite": "verified fully paid SHIELD in the $1,000 group",
+      "qualificationRule": "verified fully paid policy count in $1,000 group reaches 20",
+      "eqDelta": 80000,
+      "rewardEffect": "+80000 personal EQ; non-EQ reward: UNRESOLVED — SOURCE REQUIRED",
+      "repeatability": "once-per-achievement-id",
+      "cap": 1,
+      "forwardOnly": true,
+      "referralEligibility": "eligible under global line-1 rule when direct is at or below sponsor level",
+      "referralEqAffectsPersonalLevelEq": false,
+      "evidence": [
+        "src/data/achievementProtocol.ts",
+        "ETERNITY_SPECIAL_3.0_User_Flow_v1.1_Achievement_EQ.drawio",
+        "ETERNITY_SPECIAL_3.0_User_Flow_v1.1_README_FA.md",
+        "supplied Achievement/EQ protocol decisions"
+      ],
+      "journeyImpactCategory": "protection-commitment"
+    },
+    {
+      "product": "SHIELD",
+      "achievementId": "shield-10000-1",
+      "eventType": "shield.policy.fully-paid-count.verified",
+      "milestone": {
+        "label": "1 fully paid $10,000 policy",
+        "threshold": 1,
+        "unit": "fully paid policy"
+      },
+      "prerequisite": "verified fully paid SHIELD in the $10,000 group",
+      "qualificationRule": "verified fully paid policy count in $10,000 group reaches 1",
+      "eqDelta": 20000,
+      "rewardEffect": "+20000 personal EQ; non-EQ reward: UNRESOLVED — SOURCE REQUIRED",
+      "repeatability": "once-per-achievement-id",
+      "cap": 1,
+      "forwardOnly": true,
+      "referralEligibility": "eligible under global line-1 rule when direct is at or below sponsor level",
+      "referralEqAffectsPersonalLevelEq": false,
+      "evidence": [
+        "src/data/achievementProtocol.ts",
+        "ETERNITY_SPECIAL_3.0_User_Flow_v1.1_Achievement_EQ.drawio",
+        "ETERNITY_SPECIAL_3.0_User_Flow_v1.1_README_FA.md",
+        "supplied Achievement/EQ protocol decisions"
+      ],
+      "journeyImpactCategory": "protection-commitment"
+    },
+    {
+      "product": "SHIELD",
+      "achievementId": "shield-10000-3",
+      "eventType": "shield.policy.fully-paid-count.verified",
+      "milestone": {
+        "label": "3 fully paid $10,000 policies",
+        "threshold": 3,
+        "unit": "fully paid policy"
+      },
+      "prerequisite": "verified fully paid SHIELD in the $10,000 group",
+      "qualificationRule": "verified fully paid policy count in $10,000 group reaches 3",
+      "eqDelta": 60000,
+      "rewardEffect": "+60000 personal EQ; non-EQ reward: UNRESOLVED — SOURCE REQUIRED",
+      "repeatability": "once-per-achievement-id",
+      "cap": 1,
+      "forwardOnly": true,
+      "referralEligibility": "eligible under global line-1 rule when direct is at or below sponsor level",
+      "referralEqAffectsPersonalLevelEq": false,
+      "evidence": [
+        "src/data/achievementProtocol.ts",
+        "ETERNITY_SPECIAL_3.0_User_Flow_v1.1_Achievement_EQ.drawio",
+        "ETERNITY_SPECIAL_3.0_User_Flow_v1.1_README_FA.md",
+        "supplied Achievement/EQ protocol decisions"
+      ],
+      "journeyImpactCategory": "protection-commitment"
+    },
+    {
+      "product": "SHIELD",
+      "achievementId": "shield-10000-5",
+      "eventType": "shield.policy.fully-paid-count.verified",
+      "milestone": {
+        "label": "5 fully paid $10,000 policies",
+        "threshold": 5,
+        "unit": "fully paid policy"
+      },
+      "prerequisite": "verified fully paid SHIELD in the $10,000 group",
+      "qualificationRule": "verified fully paid policy count in $10,000 group reaches 5",
+      "eqDelta": 100000,
+      "rewardEffect": "+100000 personal EQ; non-EQ reward: UNRESOLVED — SOURCE REQUIRED",
+      "repeatability": "once-per-achievement-id",
+      "cap": 1,
+      "forwardOnly": true,
+      "referralEligibility": "eligible under global line-1 rule when direct is at or below sponsor level",
+      "referralEqAffectsPersonalLevelEq": false,
+      "evidence": [
+        "src/data/achievementProtocol.ts",
+        "ETERNITY_SPECIAL_3.0_User_Flow_v1.1_Achievement_EQ.drawio",
+        "ETERNITY_SPECIAL_3.0_User_Flow_v1.1_README_FA.md",
+        "supplied Achievement/EQ protocol decisions"
+      ],
+      "journeyImpactCategory": "protection-commitment"
+    },
+    {
+      "product": "SHIELD",
+      "achievementId": "shield-10000-10",
+      "eventType": "shield.policy.fully-paid-count.verified",
+      "milestone": {
+        "label": "10 fully paid $10,000 policies",
+        "threshold": 10,
+        "unit": "fully paid policy"
+      },
+      "prerequisite": "verified fully paid SHIELD in the $10,000 group",
+      "qualificationRule": "verified fully paid policy count in $10,000 group reaches 10",
+      "eqDelta": 200000,
+      "rewardEffect": "+200000 personal EQ; non-EQ reward: UNRESOLVED — SOURCE REQUIRED",
+      "repeatability": "once-per-achievement-id",
+      "cap": 1,
+      "forwardOnly": true,
+      "referralEligibility": "eligible under global line-1 rule when direct is at or below sponsor level",
+      "referralEqAffectsPersonalLevelEq": false,
+      "evidence": [
+        "src/data/achievementProtocol.ts",
+        "ETERNITY_SPECIAL_3.0_User_Flow_v1.1_Achievement_EQ.drawio",
+        "ETERNITY_SPECIAL_3.0_User_Flow_v1.1_README_FA.md",
+        "supplied Achievement/EQ protocol decisions"
+      ],
+      "journeyImpactCategory": "protection-commitment"
+    },
+    {
+      "product": "SHIELD",
+      "achievementId": "shield-olympic-100",
+      "eventType": "shield.olympic.qualified",
+      "milestone": {
+        "label": "$100 Olympic",
+        "threshold": 100,
+        "unit": "policy group USD"
+      },
+      "prerequisite": "verified Olympic qualification for the $100 SHIELD group",
+      "qualificationRule": "qualifying $100 Olympic event",
+      "eqDelta": 4000,
+      "rewardEffect": "+4000 personal EQ; non-EQ reward: UNRESOLVED — SOURCE REQUIRED",
+      "repeatability": "UNRESOLVED — SOURCE REQUIRED",
+      "cap": "UNRESOLVED — SOURCE REQUIRED",
+      "forwardOnly": true,
+      "referralEligibility": "eligible under global line-1 rule when direct is at or below sponsor level",
+      "referralEqAffectsPersonalLevelEq": false,
+      "evidence": [
+        "src/data/achievementProtocol.ts",
+        "ETERNITY_SPECIAL_3.0_User_Flow_v1.1_Achievement_EQ.drawio",
+        "ETERNITY_SPECIAL_3.0_User_Flow_v1.1_README_FA.md",
+        "supplied Achievement/EQ protocol decisions"
+      ],
+      "journeyImpactCategory": "protection-olympic"
+    },
+    {
+      "product": "SHIELD",
+      "achievementId": "shield-olympic-1000",
+      "eventType": "shield.olympic.qualified",
+      "milestone": {
+        "label": "$1,000 Olympic",
+        "threshold": 1000,
+        "unit": "policy group USD"
+      },
+      "prerequisite": "verified Olympic qualification for the $1,000 SHIELD group",
+      "qualificationRule": "qualifying $1,000 Olympic event",
+      "eqDelta": 40000,
+      "rewardEffect": "+40000 personal EQ; non-EQ reward: UNRESOLVED — SOURCE REQUIRED",
+      "repeatability": "UNRESOLVED — SOURCE REQUIRED",
+      "cap": "UNRESOLVED — SOURCE REQUIRED",
+      "forwardOnly": true,
+      "referralEligibility": "eligible under global line-1 rule when direct is at or below sponsor level",
+      "referralEqAffectsPersonalLevelEq": false,
+      "evidence": [
+        "src/data/achievementProtocol.ts",
+        "ETERNITY_SPECIAL_3.0_User_Flow_v1.1_Achievement_EQ.drawio",
+        "ETERNITY_SPECIAL_3.0_User_Flow_v1.1_README_FA.md",
+        "supplied Achievement/EQ protocol decisions"
+      ],
+      "journeyImpactCategory": "protection-olympic"
+    },
+    {
+      "product": "SHIELD",
+      "achievementId": "shield-olympic-10000",
+      "eventType": "shield.olympic.qualified",
+      "milestone": {
+        "label": "$10,000 Olympic",
+        "threshold": 10000,
+        "unit": "policy group USD"
+      },
+      "prerequisite": "verified Olympic qualification for the $10,000 SHIELD group",
+      "qualificationRule": "qualifying $10,000 Olympic event",
+      "eqDelta": 400000,
+      "rewardEffect": "+400000 personal EQ; non-EQ reward: UNRESOLVED — SOURCE REQUIRED",
+      "repeatability": "UNRESOLVED — SOURCE REQUIRED",
+      "cap": "UNRESOLVED — SOURCE REQUIRED",
+      "forwardOnly": true,
+      "referralEligibility": "eligible under global line-1 rule when direct is at or below sponsor level",
+      "referralEqAffectsPersonalLevelEq": false,
+      "evidence": [
+        "src/data/achievementProtocol.ts",
+        "ETERNITY_SPECIAL_3.0_User_Flow_v1.1_Achievement_EQ.drawio",
+        "ETERNITY_SPECIAL_3.0_User_Flow_v1.1_README_FA.md",
+        "supplied Achievement/EQ protocol decisions"
+      ],
+      "journeyImpactCategory": "protection-olympic"
+    },
+    {
+      "product": "SHIELD",
+      "achievementId": "shield-et-prize",
+      "eventType": "shield.special-award.qualified",
+      "milestone": {
+        "label": "ET Prize",
+        "threshold": 1,
+        "unit": "prize"
+      },
+      "prerequisite": "verified ET Prize event",
+      "qualificationRule": "qualifying ET Prize is earned",
+      "eqDelta": 500,
+      "rewardEffect": "+500 personal EQ; non-EQ reward: UNRESOLVED — SOURCE REQUIRED",
+      "repeatability": "UNRESOLVED — SOURCE REQUIRED",
+      "cap": "UNRESOLVED — SOURCE REQUIRED",
+      "forwardOnly": true,
+      "referralEligibility": "eligible under global line-1 rule when direct is at or below sponsor level",
+      "referralEqAffectsPersonalLevelEq": false,
+      "evidence": [
+        "src/data/achievementProtocol.ts",
+        "ETERNITY_SPECIAL_3.0_User_Flow_v1.1_Achievement_EQ.drawio",
+        "ETERNITY_SPECIAL_3.0_User_Flow_v1.1_README_FA.md",
+        "supplied Achievement/EQ protocol decisions"
+      ],
+      "journeyImpactCategory": "protection-prize"
+    },
+    {
+      "product": "SHIELD",
+      "achievementId": "shield-sequential-a",
+      "eventType": "shield.sequential.qualified",
+      "milestone": {
+        "label": "Sequential A",
+        "threshold": 1,
+        "unit": "sequential stage"
+      },
+      "prerequisite": "verified Sequential A qualification",
+      "qualificationRule": "Sequential A is completed",
+      "eqDelta": 3000,
+      "rewardEffect": "+3000 personal EQ; non-EQ reward: UNRESOLVED — SOURCE REQUIRED",
+      "repeatability": "UNRESOLVED — SOURCE REQUIRED",
+      "cap": "UNRESOLVED — SOURCE REQUIRED",
+      "forwardOnly": true,
+      "referralEligibility": "eligible under global line-1 rule when direct is at or below sponsor level",
+      "referralEqAffectsPersonalLevelEq": false,
+      "evidence": [
+        "src/data/achievementProtocol.ts",
+        "ETERNITY_SPECIAL_3.0_User_Flow_v1.1_Achievement_EQ.drawio",
+        "ETERNITY_SPECIAL_3.0_User_Flow_v1.1_README_FA.md",
+        "supplied Achievement/EQ protocol decisions"
+      ],
+      "journeyImpactCategory": "protection-sequential"
+    },
+    {
+      "product": "SHIELD",
+      "achievementId": "shield-sequential-b",
+      "eventType": "shield.sequential.qualified",
+      "milestone": {
+        "label": "Sequential B",
+        "threshold": 2,
+        "unit": "sequential stage"
+      },
+      "prerequisite": "verified Sequential B qualification",
+      "qualificationRule": "Sequential B is completed",
+      "eqDelta": 1000,
+      "rewardEffect": "+1000 personal EQ; non-EQ reward: UNRESOLVED — SOURCE REQUIRED",
+      "repeatability": "UNRESOLVED — SOURCE REQUIRED",
+      "cap": "UNRESOLVED — SOURCE REQUIRED",
+      "forwardOnly": true,
+      "referralEligibility": "eligible under global line-1 rule when direct is at or below sponsor level",
+      "referralEqAffectsPersonalLevelEq": false,
+      "evidence": [
+        "src/data/achievementProtocol.ts",
+        "ETERNITY_SPECIAL_3.0_User_Flow_v1.1_Achievement_EQ.drawio",
+        "ETERNITY_SPECIAL_3.0_User_Flow_v1.1_README_FA.md",
+        "supplied Achievement/EQ protocol decisions"
+      ],
+      "journeyImpactCategory": "protection-sequential"
+    },
+    {
+      "product": "SHIELD",
+      "achievementId": "shield-sequential-c",
+      "eventType": "shield.sequential.qualified",
+      "milestone": {
+        "label": "Sequential C",
+        "threshold": 3,
+        "unit": "sequential stage"
+      },
+      "prerequisite": "verified Sequential C qualification",
+      "qualificationRule": "Sequential C is completed",
+      "eqDelta": 1000,
+      "rewardEffect": "+1000 personal EQ; non-EQ reward: UNRESOLVED — SOURCE REQUIRED",
+      "repeatability": "UNRESOLVED — SOURCE REQUIRED",
+      "cap": "UNRESOLVED — SOURCE REQUIRED",
+      "forwardOnly": true,
+      "referralEligibility": "eligible under global line-1 rule when direct is at or below sponsor level",
+      "referralEqAffectsPersonalLevelEq": false,
+      "evidence": [
+        "src/data/achievementProtocol.ts",
+        "ETERNITY_SPECIAL_3.0_User_Flow_v1.1_Achievement_EQ.drawio",
+        "ETERNITY_SPECIAL_3.0_User_Flow_v1.1_README_FA.md",
+        "supplied Achievement/EQ protocol decisions"
+      ],
+      "journeyImpactCategory": "protection-sequential"
+    },
+    {
+      "product": "SHIELD",
+      "achievementId": "shield-sequential-d",
+      "eventType": "shield.sequential.qualified",
+      "milestone": {
+        "label": "Sequential D",
+        "threshold": 4,
+        "unit": "sequential stage"
+      },
+      "prerequisite": "verified Sequential D qualification",
+      "qualificationRule": "Sequential D is completed",
+      "eqDelta": 1000,
+      "rewardEffect": "+1000 personal EQ; non-EQ reward: UNRESOLVED — SOURCE REQUIRED",
+      "repeatability": "UNRESOLVED — SOURCE REQUIRED",
+      "cap": "UNRESOLVED — SOURCE REQUIRED",
+      "forwardOnly": true,
+      "referralEligibility": "eligible under global line-1 rule when direct is at or below sponsor level",
+      "referralEqAffectsPersonalLevelEq": false,
+      "evidence": [
+        "src/data/achievementProtocol.ts",
+        "ETERNITY_SPECIAL_3.0_User_Flow_v1.1_Achievement_EQ.drawio",
+        "ETERNITY_SPECIAL_3.0_User_Flow_v1.1_README_FA.md",
+        "supplied Achievement/EQ protocol decisions"
+      ],
+      "journeyImpactCategory": "protection-sequential"
+    },
+    {
+      "product": "SHIELD",
+      "achievementId": "shield-sequential-e",
+      "eventType": "shield.sequential.qualified",
+      "milestone": {
+        "label": "Sequential E",
+        "threshold": 5,
+        "unit": "sequential stage"
+      },
+      "prerequisite": "verified Sequential E qualification",
+      "qualificationRule": "Sequential E is completed",
+      "eqDelta": 500,
+      "rewardEffect": "+500 personal EQ; non-EQ reward: UNRESOLVED — SOURCE REQUIRED",
+      "repeatability": "UNRESOLVED — SOURCE REQUIRED",
+      "cap": "UNRESOLVED — SOURCE REQUIRED",
+      "forwardOnly": true,
+      "referralEligibility": "eligible under global line-1 rule when direct is at or below sponsor level",
+      "referralEqAffectsPersonalLevelEq": false,
+      "evidence": [
+        "src/data/achievementProtocol.ts",
+        "ETERNITY_SPECIAL_3.0_User_Flow_v1.1_Achievement_EQ.drawio",
+        "ETERNITY_SPECIAL_3.0_User_Flow_v1.1_README_FA.md",
+        "supplied Achievement/EQ protocol decisions"
+      ],
+      "journeyImpactCategory": "protection-sequential"
+    },
+    {
+      "product": "SHIELD",
+      "achievementId": "shield-sequential-set",
+      "eventType": "shield.sequential-set.completed",
+      "milestone": {
+        "label": "Complete set of five",
+        "threshold": 5,
+        "unit": "sequential stages"
+      },
+      "prerequisite": "verified completion of Sequential A, B, C, D and E as one qualifying set",
+      "qualificationRule": "each complete verified set of five",
+      "eqDelta": 7000,
+      "rewardEffect": "+7000 personal EQ; non-EQ reward: UNRESOLVED — SOURCE REQUIRED",
+      "repeatability": "per complete qualifying set",
+      "cap": "UNRESOLVED — SOURCE REQUIRED",
+      "forwardOnly": true,
+      "referralEligibility": "eligible under global line-1 rule when direct is at or below sponsor level",
+      "referralEqAffectsPersonalLevelEq": false,
+      "evidence": [
+        "src/data/achievementProtocol.ts",
+        "ETERNITY_SPECIAL_3.0_User_Flow_v1.1_Achievement_EQ.drawio",
+        "ETERNITY_SPECIAL_3.0_User_Flow_v1.1_README_FA.md",
+        "supplied Achievement/EQ protocol decisions"
+      ],
+      "journeyImpactCategory": "protection-sequential-set"
+    },
+    {
+      "product": "STOCK/EES",
+      "achievementId": "stock-each-complete",
+      "eventType": "stock.completed.verified",
+      "milestone": {
+        "label": "Per completed Electoral Stock",
+        "threshold": 1,
+        "unit": "completed stock"
+      },
+      "prerequisite": "verified eligible product event; integrity and anti-duplicate gate passed",
+      "qualificationRule": "each verified fully completed Electoral Stock",
+      "eqDelta": 2000,
+      "rewardEffect": "+2000 personal EQ; non-EQ reward: UNRESOLVED — SOURCE REQUIRED",
+      "repeatability": "per verified completed stock",
+      "cap": "UNRESOLVED — SOURCE REQUIRED",
+      "forwardOnly": true,
+      "referralEligibility": "eligible under global line-1 rule when direct is at or below sponsor level",
+      "referralEqAffectsPersonalLevelEq": false,
+      "evidence": [
+        "src/data/achievementProtocol.ts",
+        "ETERNITY_SPECIAL_3.0_User_Flow_v1.1_Achievement_EQ.drawio",
+        "ETERNITY_SPECIAL_3.0_User_Flow_v1.1_README_FA.md",
+        "supplied Achievement/EQ protocol decisions"
+      ],
+      "journeyImpactCategory": "governance-ownership"
+    },
+    {
+      "product": "ERA",
+      "achievementId": "era-proposal-a",
+      "eventType": "era.proposal.graded.verified",
+      "milestone": {
+        "label": "Proposal grade A",
+        "threshold": 1,
+        "unit": "graded proposal"
+      },
+      "prerequisite": "verified submitted proposal with final grade A",
+      "qualificationRule": "per verified grade A proposal",
+      "eqDelta": 5000,
+      "rewardEffect": "+5000 personal EQ; non-EQ reward: UNRESOLVED — SOURCE REQUIRED",
+      "repeatability": "per verified qualifying proposal",
+      "cap": "UNRESOLVED — SOURCE REQUIRED",
+      "forwardOnly": true,
+      "referralEligibility": "eligible under global line-1 rule when direct is at or below sponsor level",
+      "referralEqAffectsPersonalLevelEq": false,
+      "evidence": [
+        "src/data/achievementProtocol.ts",
+        "ETERNITY_SPECIAL_3.0_User_Flow_v1.1_Achievement_EQ.drawio",
+        "ETERNITY_SPECIAL_3.0_User_Flow_v1.1_README_FA.md",
+        "supplied Achievement/EQ protocol decisions"
+      ],
+      "journeyImpactCategory": "governance-proposal"
+    },
+    {
+      "product": "ERA",
+      "achievementId": "era-proposal-b",
+      "eventType": "era.proposal.graded.verified",
+      "milestone": {
+        "label": "Proposal grade B",
+        "threshold": 1,
+        "unit": "graded proposal"
+      },
+      "prerequisite": "verified submitted proposal with final grade B",
+      "qualificationRule": "per verified grade B proposal",
+      "eqDelta": 3000,
+      "rewardEffect": "+3000 personal EQ; non-EQ reward: UNRESOLVED — SOURCE REQUIRED",
+      "repeatability": "per verified qualifying proposal",
+      "cap": "UNRESOLVED — SOURCE REQUIRED",
+      "forwardOnly": true,
+      "referralEligibility": "eligible under global line-1 rule when direct is at or below sponsor level",
+      "referralEqAffectsPersonalLevelEq": false,
+      "evidence": [
+        "src/data/achievementProtocol.ts",
+        "ETERNITY_SPECIAL_3.0_User_Flow_v1.1_Achievement_EQ.drawio",
+        "ETERNITY_SPECIAL_3.0_User_Flow_v1.1_README_FA.md",
+        "supplied Achievement/EQ protocol decisions"
+      ],
+      "journeyImpactCategory": "governance-proposal"
+    },
+    {
+      "product": "ERA",
+      "achievementId": "era-proposal-c",
+      "eventType": "era.proposal.graded.verified",
+      "milestone": {
+        "label": "Proposal grade C",
+        "threshold": 1,
+        "unit": "graded proposal"
+      },
+      "prerequisite": "verified submitted proposal with final grade C",
+      "qualificationRule": "per verified grade C proposal",
+      "eqDelta": 1000,
+      "rewardEffect": "+1000 personal EQ; non-EQ reward: UNRESOLVED — SOURCE REQUIRED",
+      "repeatability": "per verified qualifying proposal",
+      "cap": "UNRESOLVED — SOURCE REQUIRED",
+      "forwardOnly": true,
+      "referralEligibility": "eligible under global line-1 rule when direct is at or below sponsor level",
+      "referralEqAffectsPersonalLevelEq": false,
+      "evidence": [
+        "src/data/achievementProtocol.ts",
+        "ETERNITY_SPECIAL_3.0_User_Flow_v1.1_Achievement_EQ.drawio",
+        "ETERNITY_SPECIAL_3.0_User_Flow_v1.1_README_FA.md",
+        "supplied Achievement/EQ protocol decisions"
+      ],
+      "journeyImpactCategory": "governance-proposal"
+    },
+    {
+      "product": "ERA",
+      "achievementId": "era-vote-each",
+      "eventType": "era.vote.eligible-recorded",
+      "milestone": {
+        "label": "Per eligible governance vote",
+        "threshold": 1,
+        "unit": "eligible vote"
+      },
+      "prerequisite": "verified eligible vote recorded for the user",
+      "qualificationRule": "per verified eligible governance vote",
+      "eqDelta": 100,
+      "rewardEffect": "+100 personal EQ; non-EQ reward: UNRESOLVED — SOURCE REQUIRED",
+      "repeatability": "per verified eligible vote",
+      "cap": "UNRESOLVED — SOURCE REQUIRED",
+      "forwardOnly": true,
+      "referralEligibility": "eligible under global line-1 rule when direct is at or below sponsor level",
+      "referralEqAffectsPersonalLevelEq": false,
+      "evidence": [
+        "src/data/achievementProtocol.ts",
+        "ETERNITY_SPECIAL_3.0_User_Flow_v1.1_Achievement_EQ.drawio",
+        "ETERNITY_SPECIAL_3.0_User_Flow_v1.1_README_FA.md",
+        "supplied Achievement/EQ protocol decisions"
+      ],
+      "journeyImpactCategory": "governance-participation"
+    },
+    {
+      "product": "EID",
+      "achievementId": "eid-each",
+      "eventType": "eid.purchase.indexed",
+      "milestone": {
+        "label": "Per purchased EID",
+        "threshold": 1,
+        "unit": "purchased EID"
+      },
+      "prerequisite": "verified indexed EID purchase attributed to user; reward count below 20",
+      "qualificationRule": "each verified purchase through the 20th rewarded EID",
+      "eqDelta": 20,
+      "rewardEffect": "+20 personal EQ; non-EQ reward: UNRESOLVED — SOURCE REQUIRED",
+      "repeatability": "per verified EID purchase up to cap",
+      "cap": {
+        "count": 20,
+        "totalEq": 400
+      },
+      "forwardOnly": true,
+      "referralEligibility": "eligible under global line-1 rule when direct is at or below sponsor level",
+      "referralEqAffectsPersonalLevelEq": false,
+      "evidence": [
+        "src/data/achievementProtocol.ts",
+        "ETERNITY_SPECIAL_3.0_User_Flow_v1.1_Achievement_EQ.drawio",
+        "ETERNITY_SPECIAL_3.0_User_Flow_v1.1_README_FA.md",
+        "supplied Achievement/EQ protocol decisions"
+      ],
+      "journeyImpactCategory": "identity-ownership"
+    }
+  ],
+  "unresolvedPolicy": "UNRESOLVED — SOURCE REQUIRED"
+}
